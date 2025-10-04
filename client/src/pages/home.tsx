@@ -39,7 +39,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import logoUrl from "@assets/backleo_1759611500843.PNG";
+import logoUrl from "@assets/backleo_1759611500843.png";
 import { useEffect, useState } from "react";
 
 export default function Home() {

@@ -302,13 +302,13 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <Badge variant="secondary" className="text-base px-4 py-1" data-testid="badge-startups-funded">
                     <TrendingUp className="w-4 h-4 mr-2" />
-                    100+ Startups Funded
+                    Trusted by Startups Nationwide
                   </Badge>
                 </div>
                 <div className="flex items-center gap-2">
                   <Badge variant="secondary" className="text-base px-4 py-1" data-testid="badge-capital-raised">
                     <DollarSign className="w-4 h-4 mr-2" />
-                    ₹500M+ Capital Raised
+                    Proven Track Record
                   </Badge>
                 </div>
               </div>
@@ -317,9 +317,8 @@ export default function Home() {
             <div className="relative lg:block hidden">
               <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center p-12">
                 <div className="text-center space-y-4">
-                  <div className="text-6xl font-bold text-primary" data-testid="text-success-rate">98%</div>
-                  <div className="text-xl font-semibold">Success Rate</div>
-                  <p className="text-muted-foreground">in securing funding for our clients</p>
+                  <div className="text-5xl font-bold text-primary" data-testid="text-success-rate">Your Growth Partner</div>
+                  <p className="text-lg text-muted-foreground">From idea validation to successful funding rounds</p>
                 </div>
               </div>
             </div>
@@ -574,109 +573,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Studies Section */}
+      {/* Why Choose Us Section */}
       <section className="py-24 md:py-32 bg-card" id="case-studies">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-casestudy-headline">
-              Real Founders, Real Results
+              Why Founders Choose Black Leo Ventures
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Success stories from startups we've helped secure funding and scale
+              Comprehensive support throughout your entire fundraising journey
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="hover-elevate group" data-testid="card-casestudy-1">
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-                    SB
-                  </div>
-                  <div>
-                    <CardTitle className="text-lg">Sarah B.</CardTitle>
-                    <CardDescription>HealthTech Startup</CardDescription>
-                  </div>
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-6 p-4 rounded-full bg-primary/10 text-primary w-fit">
+                  <Target className="h-10 w-10" />
                 </div>
-                <blockquote className="text-lg italic text-muted-foreground mb-6">
-                  "Black Leo transformed our pitch deck and connected us with the perfect investor. We closed our Series A in just 45 days."
-                </blockquote>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Funding Secured</span>
-                    <span className="text-2xl font-bold text-chart-2" data-testid="text-funding-1">₹12 Cr</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Valuation Uplift</span>
-                    <span className="text-xl font-semibold text-primary" data-testid="text-uplift-1">2.5x</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Time Taken</span>
-                    <span className="text-base font-medium" data-testid="text-time-1">45 days</span>
-                  </div>
-                </div>
+                <CardTitle className="text-2xl mb-4">Strategic Positioning</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  We help you craft a compelling narrative that resonates with investors. Your pitch deck, financial model, and founder story are tailored to highlight your unique strengths and market opportunity.
+                </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="hover-elevate group" data-testid="card-casestudy-2">
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-                    RK
-                  </div>
-                  <div>
-                    <CardTitle className="text-lg">Rahul K.</CardTitle>
-                    <CardDescription>FinTech Platform</CardDescription>
-                  </div>
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-6 p-4 rounded-full bg-primary/10 text-primary w-fit">
+                  <Users className="h-10 w-10" />
                 </div>
-                <blockquote className="text-lg italic text-muted-foreground mb-6">
-                  "The team's financial modeling expertise was exceptional. They helped us build projections that investors actually believed in."
-                </blockquote>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Funding Secured</span>
-                    <span className="text-2xl font-bold text-chart-2" data-testid="text-funding-2">₹25 Cr</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Valuation Uplift</span>
-                    <span className="text-xl font-semibold text-primary" data-testid="text-uplift-2">3x</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Time Taken</span>
-                    <span className="text-base font-medium" data-testid="text-time-2">60 days</span>
-                  </div>
-                </div>
+                <CardTitle className="text-2xl mb-4">Quality Connections</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Access our curated network of investors who actively seek opportunities in your sector and stage. We focus on warm introductions to investors who align with your vision and growth trajectory.
+                </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="hover-elevate group" data-testid="card-casestudy-3">
-              <CardHeader>
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-xl">
-                    PM
-                  </div>
-                  <div>
-                    <CardTitle className="text-lg">Priya M.</CardTitle>
-                    <CardDescription>EdTech Solution</CardDescription>
-                  </div>
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-6 p-4 rounded-full bg-primary/10 text-primary w-fit">
+                  <Headphones className="h-10 w-10" />
                 </div>
-                <blockquote className="text-lg italic text-muted-foreground mb-6">
-                  "From MVP development to investor intros, Black Leo was with us every step. We're now scaling rapidly across 5 cities."
-                </blockquote>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Funding Secured</span>
-                    <span className="text-2xl font-bold text-chart-2" data-testid="text-funding-3">₹8 Cr</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Valuation Uplift</span>
-                    <span className="text-xl font-semibold text-primary" data-testid="text-uplift-3">2x</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Time Taken</span>
-                    <span className="text-base font-medium" data-testid="text-time-3">30 days</span>
-                  </div>
-                </div>
+                <CardTitle className="text-2xl mb-4">End-to-End Support</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  From initial pitch deck audit to final fund disbursal, we're with you at every step. Our team provides ongoing guidance through due diligence, term sheet negotiations, and closing processes.
+                </CardDescription>
               </CardHeader>
             </Card>
           </div>
@@ -833,7 +775,7 @@ export default function Home() {
                 Do you guarantee funding success?
               </AccordionTrigger>
               <AccordionContent className="text-base text-muted-foreground">
-                While we cannot guarantee funding (no ethical advisor can), we have a 98% success rate with qualified startups that complete our full program. We conduct a thorough assessment during the audit phase to ensure your startup is truly ready for fundraising. If we identify gaps, we'll work with you to address them before approaching investors. Our track record speaks for itself - we've helped secure over ₹500M in funding across 100+ startups.
+                While we cannot guarantee funding (no ethical advisor can), we have a strong track record with qualified startups that complete our full program. We conduct a thorough assessment during the audit phase to ensure your startup is truly ready for fundraising. If we identify gaps, we'll work with you to address them before approaching investors. Our comprehensive approach and curated network significantly improve your chances of securing the right investment partners.
               </AccordionContent>
             </AccordionItem>
 
@@ -855,13 +797,13 @@ export default function Home() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-cta-headline">
-                Ready to Secure Your Funding?
+                Ready to Start Your Funding Journey?
               </h2>
               <p className="text-xl md:text-2xl opacity-90">
-                Apply now - Limited spots available each month
+                Let's discuss how we can help your startup succeed
               </p>
               <p className="text-lg opacity-75">
-                Join 100+ successful founders who've transformed their fundraising journey with Black Leo Ventures
+                Schedule a consultation to explore how Black Leo Ventures can support your fundraising goals
               </p>
             </div>
 
@@ -886,22 +828,22 @@ export default function Home() {
             </div>
 
             <div className="pt-8">
-              <div className="flex flex-wrap items-center justify-center gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold" data-testid="text-stat-success">98%</div>
-                  <div className="text-sm opacity-75">Success Rate</div>
+              <div className="flex flex-wrap items-center justify-center gap-8 text-center">
+                <div className="space-y-2">
+                  <div className="text-2xl font-bold" data-testid="text-stat-success">Comprehensive</div>
+                  <div className="text-sm opacity-75">End-to-End Support</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold" data-testid="text-stat-startups">100+</div>
-                  <div className="text-sm opacity-75">Startups Funded</div>
+                <div className="space-y-2">
+                  <div className="text-2xl font-bold" data-testid="text-stat-startups">Curated</div>
+                  <div className="text-sm opacity-75">Investor Network</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold" data-testid="text-stat-capital">₹500M+</div>
-                  <div className="text-sm opacity-75">Capital Raised</div>
+                <div className="space-y-2">
+                  <div className="text-2xl font-bold" data-testid="text-stat-capital">Transparent</div>
+                  <div className="text-sm opacity-75">Pricing & Process</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold" data-testid="text-stat-time">45</div>
-                  <div className="text-sm opacity-75">Avg. Days to Close</div>
+                <div className="space-y-2">
+                  <div className="text-2xl font-bold" data-testid="text-stat-time">Expert</div>
+                  <div className="text-sm opacity-75">Guidance Team</div>
                 </div>
               </div>
             </div>

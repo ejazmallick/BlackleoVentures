@@ -52,6 +52,8 @@ import {
 } from "lucide-react";
 import logoUrl from "@assets/backleo_1759611500843.png";
 import { useEffect, useState, useRef } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { AnimatedCounter } from "@/components/animated-counter";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -180,7 +182,7 @@ export default function Home() {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               <button
                 onClick={() => scrollToSection("services")}
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -194,6 +196,13 @@ export default function Home() {
                 data-testid="link-process"
               >
                 Process
+              </button>
+              <button
+                onClick={() => scrollToSection("pricing")}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="link-pricing"
+              >
+                Pricing
               </button>
               <button
                 onClick={() => scrollToSection("case-studies")}
@@ -219,6 +228,7 @@ export default function Home() {
                 <Download className="w-3 h-3" />
                 Company Profile
               </a>
+              <ThemeToggle />
               <Button
                 size="sm"
                 onClick={() => scrollToSection("contact")}
@@ -255,6 +265,13 @@ export default function Home() {
                     Process
                   </button>
                   <button
+                    onClick={() => scrollToSection("pricing")}
+                    className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
+                    data-testid="link-mobile-pricing"
+                  >
+                    Pricing
+                  </button>
+                  <button
                     onClick={() => scrollToSection("case-studies")}
                     className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
                     data-testid="link-mobile-case-studies"
@@ -278,6 +295,10 @@ export default function Home() {
                     <Download className="w-4 h-4" />
                     Company Profile
                   </a>
+                  <div className="flex items-center justify-between mt-4 pt-4 border-t">
+                    <span className="text-sm font-medium">Theme</span>
+                    <ThemeToggle />
+                  </div>
                   <Button
                     className="w-full mt-4"
                     onClick={() => scrollToSection("contact")}
@@ -294,7 +315,8 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-primary/20 dark:via-primary/10 dark:to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10" />
         <div className="max-w-7xl mx-auto px-6 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -912,6 +934,156 @@ export default function Home() {
                 </div>
               </CardHeader>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Transparent Pricing Section */}
+      <section className="py-24 md:py-32 bg-gradient-to-b from-background to-card" id="pricing">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center space-y-4 mb-16">
+            <Badge variant="outline" className="text-sm px-4 py-1 mb-4">
+              <Shield className="w-4 h-4 mr-2" />
+              Complete Transparency
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-pricing-headline">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              No hidden fees, no surprises. We believe in complete transparency with our pricing structure.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            <Card className="relative overflow-hidden border-2 hover-elevate" data-testid="card-consulting-fee">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <FileCheck className="w-6 h-6 text-primary" />
+                  Consulting Fee
+                </CardTitle>
+                <CardDescription className="text-base mt-2">
+                  One-time upfront fee for comprehensive services
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-primary">Modest</span>
+                    <span className="text-muted-foreground">upfront fee</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Covers pitch deck audit, strategy development, financial modeling, and investor preparation
+                  </p>
+                </div>
+                <div className="pt-4 border-t space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Comprehensive pitch deck audit & refinement</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Financial model development</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Investor matchmaking strategy</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Regulatory & compliance guidance</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="relative overflow-hidden border-2 border-primary/20 hover-elevate" data-testid="card-success-fee">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <TrendingUp className="w-6 h-6 text-primary" />
+                  Success Fee
+                </CardTitle>
+                <CardDescription className="text-base mt-2">
+                  Performance-based fee upon successful funding
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-bold text-primary">% Based</span>
+                    <span className="text-muted-foreground">on funding secured</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    We only succeed when you succeed. Our success fee aligns our interests with yours
+                  </p>
+                </div>
+                <div className="pt-4 border-t space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Only charged on successful funding</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Competitive industry-standard rates</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>Clear terms agreed upfront</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span>No hidden charges or surprises</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="max-w-4xl mx-auto border-2 border-primary/10 bg-primary/5" data-testid="card-guarantee">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
+                <Shield className="w-6 h-6 text-primary" />
+                Our Commitment to Transparency
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold text-primary">
+                    <AnimatedCounter end={0} prefix="₹" />
+                  </div>
+                  <p className="text-sm font-medium">Hidden Fees</p>
+                  <p className="text-xs text-muted-foreground">Everything is disclosed upfront</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold text-primary">
+                    <AnimatedCounter end={100} suffix="%" />
+                  </div>
+                  <p className="text-sm font-medium">Clear Documentation</p>
+                  <p className="text-xs text-muted-foreground">All terms in plain language</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="text-3xl font-bold text-primary">
+                    <AnimatedCounter end={24} suffix="/7" />
+                  </div>
+                  <p className="text-sm font-medium">Support Access</p>
+                  <p className="text-xs text-muted-foreground">We're here when you need us</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="mt-12 text-center">
+            <p className="text-lg text-muted-foreground mb-6">
+              Ready to discuss your specific pricing? Schedule a free consultation
+            </p>
+            <Button size="lg" asChild data-testid="button-pricing-consultation">
+              <a href="https://zcal.co/blackleoventures/30min" target="_blank" rel="noopener noreferrer">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Free Consultation
+              </a>
+            </Button>
           </div>
         </div>
       </section>

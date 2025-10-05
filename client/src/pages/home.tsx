@@ -27,12 +27,11 @@ import {
   FileX,
   Clock,
   Shield,
-  Sparkles,
   Users,
   Target,
   Headphones,
   Briefcase,
-  DollarSign,
+  IndianRupee,
   Building,
   Award,
   FileCheck,
@@ -47,6 +46,9 @@ import {
   X,
   Phone,
   Mail,
+  MessageCircle,
+  Download,
+  Info,
 } from "lucide-react";
 import logoUrl from "@assets/backleo_1759611500843.png";
 import { useEffect, useState, useRef } from "react";
@@ -200,13 +202,23 @@ export default function Home() {
               >
                 Case Studies
               </button>
-              <button
-                onClick={() => scrollToSection("faq")}
+              <a
+                href="/about"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="link-faq"
+                data-testid="link-about"
               >
-                FAQ
-              </button>
+                About Us
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1sU4-aKaIxF-ZB-IjXw9h4cwf8QEnB4q2/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
+                data-testid="link-company-profile"
+              >
+                <Download className="w-3 h-3" />
+                Company Profile
+              </a>
               <Button
                 size="sm"
                 onClick={() => scrollToSection("contact")}
@@ -249,13 +261,23 @@ export default function Home() {
                   >
                     Case Studies
                   </button>
-                  <button
-                    onClick={() => scrollToSection("faq")}
+                  <a
+                    href="/about"
                     className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
-                    data-testid="link-mobile-faq"
+                    data-testid="link-mobile-about"
                   >
-                    FAQ
-                  </button>
+                    About Us
+                  </a>
+                  <a
+                    href="https://drive.google.com/file/d/1sU4-aKaIxF-ZB-IjXw9h4cwf8QEnB4q2/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors text-left flex items-center gap-2"
+                    data-testid="link-mobile-company-profile"
+                  >
+                    <Download className="w-4 h-4" />
+                    Company Profile
+                  </a>
                   <Button
                     className="w-full mt-4"
                     onClick={() => scrollToSection("contact")}
@@ -290,20 +312,25 @@ export default function Home() {
                 <Button
                   size="lg"
                   className="text-lg"
-                  onClick={() => scrollToSection("contact")}
+                  asChild
                   data-testid="button-pitch-deck-audit"
                 >
-                  Apply for Pitch Deck Audit
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <a href="https://wa.me/917837059633?text=Hi%2C%20I%27m%20interested%20in%20a%20Pitch%20Deck%20Audit%20for%20my%20startup.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Apply for Pitch Deck Audit
+                  </a>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="text-lg"
-                  onClick={() => scrollToSection("contact")}
+                  asChild
                   data-testid="button-schedule-meeting"
                 >
-                  Schedule a Meeting
+                  <a href="https://zcal.co/blackleoventures/30min" target="_blank" rel="noopener noreferrer">
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Schedule a Meeting
+                  </a>
                 </Button>
               </div>
 
@@ -316,7 +343,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Badge variant="secondary" className="text-base px-4 py-1" data-testid="badge-capital-raised">
-                    <DollarSign className="w-4 h-4 mr-2" />
+                    <IndianRupee className="w-4 h-4 mr-2" />
                     Proven Track Record
                   </Badge>
                 </div>
@@ -547,18 +574,6 @@ export default function Home() {
             <Card className="hover-elevate" data-testid="card-advantage-2">
               <CardHeader>
                 <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                  <Sparkles className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-xl mb-2">Conviction-Driven Pitches</CardTitle>
-                <CardDescription className="text-base">
-                  Pitches tailored to showcase your unique value proposition through our comprehensive pitch analysis.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-
-            <Card className="hover-elevate" data-testid="card-advantage-3">
-              <CardHeader>
-                <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit mb-4">
                   <Users className="h-6 w-6" />
                 </div>
                 <CardTitle className="text-xl mb-2">Proprietary Matchmaking</CardTitle>
@@ -607,7 +622,7 @@ export default function Home() {
               <Card className="hover-elevate" data-testid="card-expertise-1">
                 <CardHeader className="text-center">
                   <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <DollarSign className="h-8 w-8" />
+                    <IndianRupee className="h-8 w-8" />
                   </div>
                   <CardTitle className="text-2xl">Funds for Startups</CardTitle>
                   <CardDescription className="text-base">
@@ -1042,11 +1057,14 @@ export default function Home() {
               </p>
               <div className="pt-4">
                 <Button 
-                  onClick={() => scrollToSection("contact")}
+                  asChild
                   className="w-full"
                   data-testid="button-footer-consultation"
                 >
-                  Book a Consultation
+                  <a href="https://wa.me/917837059633?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20consultation%20with%20Black%20Leo%20Ventures.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    Book a Consultation
+                  </a>
                 </Button>
               </div>
             </div>
@@ -1076,10 +1094,9 @@ export default function Home() {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <div className="font-medium text-foreground">Corporate IVR</div>
-                    <a href="tel:3369029855" className="hover:text-foreground transition-colors">3369029855</a>
-                  </div>
+                  <a href="tel:+917837059633" className="font-medium text-foreground hover:text-primary transition-colors">
+                    +91 78370 59633
+                  </a>
                 </li>
                 <li className="flex items-start gap-2">
                   <Building className="w-4 h-4 mt-0.5 flex-shrink-0" />
@@ -1109,7 +1126,7 @@ export default function Home() {
                 </Badge>
               </div>
               <p className="text-sm text-muted-foreground" data-testid="text-copyright">
-                © 2024 Black Leo Ventures. All rights reserved.
+                © 2025 Black Leo Ventures. All rights reserved.
               </p>
             </div>
           </div>

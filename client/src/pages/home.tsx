@@ -54,6 +54,8 @@ import logoUrl from "@assets/backleo_1759611500843.png";
 import { useEffect, useState, useRef } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { AnimatedCounter } from "@/components/animated-counter";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -173,6 +175,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <FloatingWhatsApp />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -333,13 +336,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="text-lg"
+                  className="text-lg relative overflow-hidden group"
                   asChild
                   data-testid="button-pitch-deck-audit"
                 >
                   <a href="https://wa.me/917837059633?text=Hi%2C%20I%27m%20interested%20in%20a%20Pitch%20Deck%20Audit%20for%20my%20startup.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Apply for Pitch Deck Audit
+                    <span className="absolute inset-0 animate-pulse-slow bg-primary/20 rounded-md"></span>
+                    <MessageCircle className="mr-2 h-5 w-5 relative z-10" />
+                    <span className="relative z-10">Apply for Pitch Deck Audit</span>
                   </a>
                 </Button>
                 <Button
@@ -358,13 +362,13 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center gap-6 pt-4">
                 <div className="flex items-center gap-2">
-                  <Badge variant="secondary" className="text-base px-4 py-1" data-testid="badge-startups-funded">
+                  <Badge variant="secondary" className="text-base px-4 py-1 animate-shimmer" data-testid="badge-startups-funded">
                     <TrendingUp className="w-4 h-4 mr-2" />
                     Trusted by Startups Nationwide
                   </Badge>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Badge variant="secondary" className="text-base px-4 py-1" data-testid="badge-capital-raised">
+                  <Badge variant="secondary" className="text-base px-4 py-1 animate-shimmer" data-testid="badge-capital-raised">
                     <IndianRupee className="w-4 h-4 mr-2" />
                     Proven Track Record
                   </Badge>
@@ -373,7 +377,7 @@ export default function Home() {
             </div>
 
             <div className="relative lg:block hidden">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center p-12">
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center p-12 animate-float">
                 <div className="text-center space-y-4">
                   <div className="text-5xl font-bold text-primary" data-testid="text-success-rate">Your Growth Partner</div>
                   <p className="text-lg text-muted-foreground">From idea validation to successful funding rounds</p>
@@ -485,17 +489,19 @@ export default function Home() {
       {/* Pain Points Section */}
       <section className="py-24 md:py-32 bg-card" id="pain-points">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-pain-headline">
-              Why Most Fundraising Efforts Yield No Results
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Understanding the common pitfalls that prevent startups from securing funding
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center space-y-4 mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-pain-headline">
+                Why Most Fundraising Efforts Yield No Results
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Understanding the common pitfalls that prevent startups from securing funding
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <Card className="hover-elevate border-destructive/20" data-testid="card-pain-1">
+            <Card className="interactive-card border-destructive/20" data-testid="card-pain-1">
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-destructive/10 text-destructive">
@@ -511,7 +517,7 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="hover-elevate border-destructive/20" data-testid="card-pain-2">
+            <Card className="interactive-card border-destructive/20" data-testid="card-pain-2">
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-destructive/10 text-destructive">
@@ -527,7 +533,7 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="hover-elevate border-destructive/20" data-testid="card-pain-3">
+            <Card className="interactive-card border-destructive/20" data-testid="card-pain-3">
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-destructive/10 text-destructive">
@@ -543,7 +549,7 @@ export default function Home() {
               </CardHeader>
             </Card>
 
-            <Card className="hover-elevate border-destructive/20" data-testid="card-pain-4">
+            <Card className="interactive-card border-destructive/20" data-testid="card-pain-4">
               <CardHeader>
                 <div className="flex items-start gap-4">
                   <div className="p-3 rounded-lg bg-destructive/10 text-destructive">
@@ -941,21 +947,23 @@ export default function Home() {
       {/* Transparent Pricing Section */}
       <section className="py-24 md:py-32 bg-gradient-to-b from-background to-card" id="pricing">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="outline" className="text-sm px-4 py-1 mb-4">
-              <Shield className="w-4 h-4 mr-2" />
-              Complete Transparency
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-pricing-headline">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              No hidden fees, no surprises. We believe in complete transparency with our pricing structure.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center space-y-4 mb-16">
+              <Badge variant="outline" className="text-sm px-4 py-1 mb-4">
+                <Shield className="w-4 h-4 mr-2" />
+                Complete Transparency
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-pricing-headline">
+                Simple, Transparent Pricing
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                No hidden fees, no surprises. We believe in complete transparency with our pricing structure.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-            <Card className="relative overflow-hidden border-2 hover-elevate" data-testid="card-consulting-fee">
+            <Card className="relative overflow-hidden border-2 interactive-card" data-testid="card-consulting-fee">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-2">
@@ -997,7 +1005,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="relative overflow-hidden border-2 border-primary/20 hover-elevate" data-testid="card-success-fee">
+            <Card className="relative overflow-hidden border-2 border-primary/20 interactive-card" data-testid="card-success-fee">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl" />
               <CardHeader>
                 <CardTitle className="text-2xl flex items-center gap-2">

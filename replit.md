@@ -86,6 +86,15 @@ vercel --prod
 - Fast loading and optimized performance
 
 ## Recent Changes
+- 2025-01-05: Final updates for Indian market optimization
+  - Replaced all currency icons with IndianRupee (₹) from lucide-react
+  - Updated phone number to +91 78370 59633 (removed IVR reference)
+  - Integrated WhatsApp links (wa.me) for all CTAs with prefilled messages
+  - Added scheduling link (https://zcal.co/blackleoventures/30min)
+  - Removed "Conviction-Driven Pitches" advantage card
+  - Updated footer copyright year to 2025
+  - Created comprehensive About Us page with director information (Nirdosh Arora, Utkarsh Chourasiya)
+  - Added company profile download link in navigation
 - 2024-10-04: Initial website creation with all sections
 - Implemented comprehensive SEO meta tags
 - Added Vercel deployment configuration

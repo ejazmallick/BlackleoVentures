@@ -1007,18 +1007,25 @@ export default function Home() {
                 size="lg"
                 variant="secondary"
                 className="text-lg"
+                asChild
                 data-testid="button-cta-apply"
               >
-                Apply for Pitch Deck Audit
-                <CheckCircle2 className="ml-2 h-5 w-5" />
+                <a href="https://wa.me/917837059633?text=Hi%2C%20I%27m%20interested%20in%20a%20Pitch%20Deck%20Audit%20for%20my%20startup.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Apply for Pitch Deck Audit
+                </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="text-lg border-primary-foreground/20 hover:bg-primary-foreground/10"
+                asChild
                 data-testid="button-cta-schedule"
               >
-                Schedule a Free Consultation
+                <a href="https://zcal.co/blackleoventures/30min" target="_blank" rel="noopener noreferrer">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Schedule a Free Consultation
+                </a>
               </Button>
             </div>
 

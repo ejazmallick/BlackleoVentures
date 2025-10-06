@@ -713,8 +713,8 @@ export default function Home() {
                   <p className="font-semibold text-foreground">Founded: 2021 | Valuation: $3.6B</p>
                   <p>Two 19-year-old Stanford dropouts built India's fastest-growing quick commerce platform. Raised over $1.4 billion from top-tier investors including Y Combinator, Nexus Venture Partners, and Glade Brook Capital.</p>
                   <div className="pt-4 mt-4 border-t border-primary/20">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <p className="text-base font-bold text-primary">
+                    <div className="bg-primary/20 dark:bg-primary/30 rounded-lg p-3">
+                      <p className="text-base font-bold text-foreground dark:text-white">
                         Key Success Factor: Solved hyperlocal delivery with tech-driven dark stores
                       </p>
                     </div>
@@ -733,8 +733,8 @@ export default function Home() {
                   <p className="font-semibold text-foreground">Founded: 2018 | Valuation: $6.4B</p>
                   <p>Kunal Shah's second unicorn created a members-only club for creditworthy Indians. Raised funding from Sequoia Capital, Ribbit Capital, and Tiger Global with innovative reward mechanisms.</p>
                   <div className="pt-4 mt-4 border-t border-primary/20">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <p className="text-base font-bold text-primary">
+                    <div className="bg-primary/20 dark:bg-primary/30 rounded-lg p-3">
+                      <p className="text-base font-bold text-foreground dark:text-white">
                         Key Success Factor: Gamified credit card payments with exclusive rewards
                       </p>
                     </div>
@@ -753,8 +753,8 @@ export default function Home() {
                   <p className="font-semibold text-foreground">Founded: 2020 | Valuation: $2.8B</p>
                   <p>Started as YouTube channel, Alakh Pandey built India's most affordable ed-tech platform. Achieved unicorn status with backing from Westbridge Capital and GSV Ventures, serving 10M+ students.</p>
                   <div className="pt-4 mt-4 border-t border-primary/20">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <p className="text-base font-bold text-primary">
+                    <div className="bg-primary/20 dark:bg-primary/30 rounded-lg p-3">
+                      <p className="text-base font-bold text-foreground dark:text-white">
                         Key Success Factor: Quality education at 1/10th the cost of competitors
                       </p>
                     </div>
@@ -773,8 +773,8 @@ export default function Home() {
                   <p className="font-semibold text-foreground">Founded: 2014 | Valuation: $5.6B</p>
                   <p>Abhinav Asthana built the world's leading API platform from Bengaluru. Now used by 25M+ developers globally with funding from Insight Partners, Nexus Venture Partners, and CRV.</p>
                   <div className="pt-4 mt-4 border-t border-primary/20">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <p className="text-base font-bold text-primary">
+                    <div className="bg-primary/20 dark:bg-primary/30 rounded-lg p-3">
+                      <p className="text-base font-bold text-foreground dark:text-white">
                         Key Success Factor: Solved global API development pain point
                       </p>
                     </div>
@@ -793,8 +793,8 @@ export default function Home() {
                   <p className="font-semibold text-foreground">Founded: 2015 | Valuation: $5.6B</p>
                   <p>Dharmil Sheth and Dhaval Shah revolutionized medicine delivery in India. Raised funding from TPG, Prosus Ventures, and Temasek, serving 100+ cities with 90M+ deliveries.</p>
                   <div className="pt-4 mt-4 border-t border-primary/20">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <p className="text-base font-bold text-primary">
+                    <div className="bg-primary/20 dark:bg-primary/30 rounded-lg p-3">
+                      <p className="text-base font-bold text-foreground dark:text-white">
                         Key Success Factor: Made healthcare accessible and affordable pan-India
                       </p>
                     </div>
@@ -813,8 +813,8 @@ export default function Home() {
                   <p className="font-semibold text-foreground">Founded: 2011 | Market Cap: $5B+</p>
                   <p>Sahil Barua built India's largest logistics network from scratch. Successfully IPO'd with backing from SoftBank, Tiger Global, and Carlyle Group, handling 2B+ shipments annually.</p>
                   <div className="pt-4 mt-4 border-t border-primary/20">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <p className="text-base font-bold text-primary">
+                    <div className="bg-primary/20 dark:bg-primary/30 rounded-lg p-3">
+                      <p className="text-base font-bold text-foreground dark:text-white">
                         Key Success Factor: Built tech-first logistics infrastructure for e-commerce boom
                       </p>
                     </div>

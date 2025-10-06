@@ -119,16 +119,19 @@ export function ColorThemeSwitcher() {
         </div>
       )}
       
-      <button
-        onClick={() => setVisible(!visible)}
-        className="fixed left-0 bottom-6 bg-primary text-primary-foreground px-3 py-5 rounded-r-lg shadow-xl hover-elevate z-50 transition-all flex items-center gap-2 group"
-        data-testid="button-toggle-color-switcher"
-      >
-        {visible ? <EyeOff className="h-6 w-6" /> : <Eye className="h-6 w-6" />}
-        <span className="text-sm font-semibold whitespace-nowrap pr-2">
-          {visible ? "Hide" : "Colors"}
-        </span>
-      </button>
+      <div className="fixed left-0 bottom-6 z-50 opacity-0 hover:opacity-100 focus-within:opacity-100 active:opacity-100 transition-all duration-300 group">
+        <button
+          onClick={() => setVisible(!visible)}
+          className="bg-primary text-primary-foreground px-3 py-5 rounded-r-lg shadow-xl hover-elevate flex items-center gap-2 focus-visible:opacity-100"
+          data-testid="button-toggle-color-switcher"
+          aria-label="Toggle color theme selector"
+        >
+          {visible ? <EyeOff className="h-6 w-6" /> : <Eye className="h-6 w-6" />}
+          <span className="text-sm font-semibold whitespace-nowrap pr-2">
+            {visible ? "Hide" : "Colors"}
+          </span>
+        </button>
+      </div>
     </>
   );
 }

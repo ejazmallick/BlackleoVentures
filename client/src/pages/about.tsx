@@ -2,17 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, ArrowLeft, Linkedin, Download } from "lucide-react";
 import logoUrl from "@assets/backleo_1759611500843.png";
+import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
+      <ColorThemeSwitcher />
       {/* Navigation */}
       <div className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <a href="/" className="flex items-center gap-2" data-testid="link-home-logo">
               <img src={logoUrl} alt="Black Leo Ventures" className="h-10 w-auto" data-testid="img-logo" />
-            </div>
+            </a>
             <div className="flex items-center gap-4">
               <Button
                 variant="ghost"
@@ -94,7 +96,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Director 1 */}
             <Card className="hover-elevate" data-testid="card-director-1">
               <CardHeader className="text-center space-y-6">
@@ -157,6 +159,39 @@ export default function About() {
                 </div>
                 <div className="text-center text-sm text-muted-foreground">
                   Utkarsh@blackleoventures.com
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Director 3 */}
+            <Card className="hover-elevate" data-testid="card-director-3">
+              <CardHeader className="text-center space-y-6">
+                <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-primary">BC</span>
+                </div>
+                <div className="space-y-2">
+                  <CardTitle className="text-2xl">Bhawna Chourasiya</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary">
+                    Director
+                  </CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center justify-center gap-2 pt-4">
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="flex-1"
+                    data-testid="button-email-bhawna"
+                  >
+                    <a href="mailto:bhawna@blackleoventures.com">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Email
+                    </a>
+                  </Button>
+                </div>
+                <div className="text-center text-sm text-muted-foreground">
+                  bhawna@blackleoventures.com
                 </div>
               </CardContent>
             </Card>

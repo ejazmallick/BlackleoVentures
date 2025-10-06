@@ -56,6 +56,44 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
+import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
+
+function AnimatedBoardText() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const messages = [
+    "From idea validation to successful funding rounds",
+    "Expert pitch deck development & refinement",
+    "Strategic investor matchmaking & connections",
+    "Comprehensive financial modeling support",
+    "End-to-end fundraising guidance",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % messages.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [messages.length]);
+
+  return (
+    <div className="relative w-full px-4">
+      {messages.map((message, index) => (
+        <div
+          key={index}
+          className={`absolute inset-x-0 transition-all duration-700 ${
+            index === currentIndex
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4 pointer-events-none"
+          }`}
+          data-testid={`text-animated-message-${index}`}
+        >
+          <p className="text-base md:text-lg leading-relaxed">{message}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -176,13 +214,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <FloatingWhatsApp />
+      <ColorThemeSwitcher />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <a href="/" className="flex items-center gap-2" data-testid="link-home-logo">
               <img src={logoUrl} alt="Black Leo Ventures" className="h-10 w-auto" data-testid="img-logo" />
-            </div>
+            </a>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
@@ -377,10 +416,14 @@ export default function Home() {
             </div>
 
             <div className="relative lg:block hidden">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center p-12 animate-float">
-                <div className="text-center space-y-4">
-                  <div className="text-5xl font-bold text-primary" data-testid="text-success-rate">Your Growth Partner</div>
-                  <p className="text-lg text-muted-foreground">From idea validation to successful funding rounds</p>
+              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/30 flex flex-col items-center justify-center p-8 animate-float shadow-xl" data-testid="card-growth-partner">
+                <div className="text-center space-y-6 w-full">
+                  <div className="text-4xl font-bold text-primary border-b-2 border-primary/30 pb-4" data-testid="text-board-title">
+                    Your Growth Partner
+                  </div>
+                  <div className="space-y-3 text-base text-foreground font-medium overflow-hidden min-h-[200px]">
+                    <AnimatedBoardText />
+                  </div>
                 </div>
               </div>
             </div>
@@ -607,6 +650,18 @@ export default function Home() {
                 <CardTitle className="text-xl mb-2">Proprietary Matchmaking</CardTitle>
                 <CardDescription className="text-base">
                   Our algorithm matches you with investors who align with your industry, stage, and vision.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="hover-elevate" data-testid="card-advantage-3">
+              <CardHeader>
+                <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit mb-4">
+                  <FileText className="h-6 w-6" />
+                </div>
+                <CardTitle className="text-xl mb-2">Pitch Deck Analysis & Improvement</CardTitle>
+                <CardDescription className="text-base">
+                  Expert analysis and refinement of your pitch deck to maximize impact and investor engagement.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -940,6 +995,12 @@ export default function Home() {
                 </div>
               </CardHeader>
             </Card>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-sm text-muted-foreground italic" data-testid="text-timeline-disclaimer">
+              * Timeline is approximate and may vary based on individual startup requirements. Not guaranteed.
+            </p>
           </div>
         </div>
       </section>

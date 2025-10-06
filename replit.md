@@ -107,6 +107,17 @@ vercel --prod
 - Fast loading and optimized performance
 
 ## Recent Changes
+- 2025-10-06: UI Accessibility and Visibility Improvements
+  - **Case Studies Section**: Fixed "Key Success Factor" text visibility in dark mode
+    - Changed text color to use `text-foreground dark:text-white` for maximum visibility
+    - Increased background opacity to `bg-primary/20 dark:bg-primary/30` for better contrast
+    - Applied consistently across all 6 success story cards for yellow, violet, and red themes
+  - **Color Theme Switcher**: Enhanced accessibility and discoverability
+    - Made switcher button invisible by default (`opacity-0`) with reveal on hover
+    - Added `focus-within:opacity-100` for keyboard navigation accessibility
+    - Added `active:opacity-100` for touch device activation
+    - Added `aria-label="Toggle color theme selector"` for screen reader support
+    - Ensures full accessibility for mouse, keyboard, touch, and screen reader users
 - 2025-10-06: Black Leo Ventures Platform Transformation
   - **Logo Update**: Replaced company logo with new Black Leo Ventures logo (logo blackleo_1759773901852.png) across all pages
   - **Hero Section Redesign**: 

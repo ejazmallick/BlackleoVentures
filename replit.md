@@ -11,19 +11,24 @@ A premium, SEO-optimized corporate website for Black Leo Ventures - a startup fu
 - **Deployment**: Vercel-ready with optimized configuration
 
 ## Features
-1. **Hero Section** - Compelling headline with dual CTAs, trust badges, and animated gradient backgrounds
+1. **Hero Section** - Compelling headline with dual CTAs, animated "Your Growth Partner" board with rotating messages
 2. **Pain Points Section** - Addresses common fundraising challenges with interactive cards
-3. **Value Proposition** - 5-point advantage with expertise areas (6 services)
+3. **Value Proposition** - 5-point advantage including Pitch Deck Analysis & Improvement
 4. **Transparent Pricing** - Detailed fee structure with consulting and success fees clearly displayed
 5. **Case Studies** - Real founder testimonials with animated metrics counters
-6. **Process Flow** - 4-step funding system with timelines
+6. **Process Flow** - 4-step funding system with timeline disclaimer
 7. **FAQ Section** - Comprehensive Q&A addressing transparency, security, and process
 8. **Final CTA** - Conversion-focused call-to-action
-9. **Professional Footer** - Complete navigation and trust badges
+9. **Professional Footer** - Complete navigation and trust badges with clickable logo
 10. **Floating WhatsApp** - Persistent WhatsApp contact button for instant communication
+11. **Color Theme Switcher** - Hidden by default with discoverable eye button and intro animation
 
 ## Design System
-- **Brand Colors**: Black and Gold/Orange (primary: hsl(25, 90%, 55%))
+- **Brand Colors**: Yellow-based theme with multiple color schemes
+  - Primary (Yellow): #FFD700 / HSL 51, 100%, 50%
+  - Alternative themes: Violet (#8A2BE2), Red (#FF4500)
+  - Accents: Black (#000000), White (#FFFFFF)
+- **Color Theme Switcher**: Discoverable eye button on left edge with 5-second intro animation
 - **Typography**: Inter for body text, Space Grotesk for accents
 - **Dark Mode**: Fully supported with persistent theme toggle and localStorage sync
 - **Responsive**: Mobile-first design, optimized for all screen sizes
@@ -32,6 +37,7 @@ A premium, SEO-optimized corporate website for Black Leo Ventures - a startup fu
   - Animated counters for metrics
   - Interactive card hover effects with scale and shadow
   - Gradient animations on hero section
+  - Rotating text animation in "Your Growth Partner" board
   - Pulse, shimmer, and float effects
   - Accessibility: Respects prefers-reduced-motion settings
 
@@ -101,6 +107,16 @@ vercel --prod
 - Fast loading and optimized performance
 
 ## Recent Changes
+- 2025-10-06: Yellow color theme transformation
+  - Updated color scheme from orange to yellow-based theme (#FFD700 primary)
+  - Added alternative color themes: Violet (#8A2BE2) and Red (#FF4500)
+  - Created ColorThemeSwitcher component with discoverable eye button on left edge
+  - Implemented 5-second intro animation showing "Theme" label for discoverability
+  - Added 5th service "Pitch Deck Analysis & Improvement" to Our 5-Point Advantage
+  - Enhanced "Your Growth Partner" hero box with animated rotating text messages
+  - Added timeline disclaimer to "Our 4-Step Funding System"
+  - Made logo clickable to redirect to home page on all pages
+  - Added BHAWNA CHOURASIYA as third director in About Us page
 - 2025-10-05: Masterpiece design transformation
   - Implemented complete dark/light mode system with ThemeProvider and persistent theme toggle
   - Added transparent pricing section with detailed fee breakdown (consulting + success fees)

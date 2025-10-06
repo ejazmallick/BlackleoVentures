@@ -107,6 +107,26 @@ vercel --prod
 - Fast loading and optimized performance
 
 ## Recent Changes
+- 2025-10-06: Black Leo Ventures Platform Transformation
+  - **Logo Update**: Replaced company logo with new Black Leo Ventures logo (logo blackleo_1759773901852.png) across all pages
+  - **Hero Section Redesign**: 
+    - Changed main headline to "Secure one on one access to investors"
+    - Reorganized subheading: "From building your MVP to making you investor-ready; we prepare your startup for growth and provide direct access to vetted capital."
+  - **Our Expertise Section**: Redesigned with 6 comprehensive services:
+    1. Funds for Startups - Direct investor connections and fundraising support
+    2. Funds for Funds - Capital raising for investment funds
+    3. Grants & Incubation Support - Redirects to http://getgrants.in/ for government grants
+    4. Deal Origination & Structuring - Investment deal pipeline and structuring
+    5. Mergers and Acquisitions - M&A advisory and execution
+    6. Documentation - Legal and compliance documentation
+  - **AI-Powered Tools**: Added serverless Vercel API functions
+    - Pitch Practice tool with Gemini AI-powered investor simulation (gemini-2.0-flash model)
+    - Equity Calculator for dilution analysis and funding scenarios
+    - Configured GOOGLE_API_KEY secret for Gemini AI integration
+  - **Technical Updates**:
+    - Fixed Vercel serverless functions to use @google/genai package with GoogleGenAI class
+    - Implemented proper API routing with /api directory structure
+    - Added Zod validation schemas for API requests
 - 2025-10-06: Yellow color theme transformation
   - Updated color scheme from orange to yellow-based theme (#FFD700 primary)
   - Added alternative color themes: Violet (#8A2BE2) and Red (#FF4500)

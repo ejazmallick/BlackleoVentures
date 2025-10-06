@@ -43,7 +43,15 @@ Keep responses concise (2-4 sentences) and always end with a specific follow-up 
       contents: contents,
     });
 
-    return response.text || "I'm listening. What else can you tell me about your startup?";
+    // Extract text from response - response.text is a property, not a method
+    const text = response.text;
+    
+    if (!text || typeof text !== 'string') {
+      console.error("Invalid response from Gemini:", response);
+      return "I'm listening. What else can you tell me about your startup?";
+    }
+
+    return text;
   } catch (error) {
     console.error("Gemini API error:", error);
     throw new Error(`Failed to generate investor response: ${error}`);

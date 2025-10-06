@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, ArrowLeft, Linkedin, Download } from "lucide-react";
-import logoUrl from "@assets/backleo_1759611500843.png";
+import logoUrl from "@assets/logo blackleo_1759773901852.png";
 import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
 
 export default function About() {

@@ -1,49 +1,49 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import { pitchPracticeRequestSchema, type PitchPracticeMessage } from "./schemas";
-
-// Initialize AI model with error handling
-let model: any = null;
-try {
-  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
-  model = genAI.getGenerativeModel({ model: "gemini-pro" });
-} catch (error) {
-  console.error("Failed to initialize AI model:", error);
-}
 
 async function generateInvestorResponse(
   userMessage: string,
   conversationHistory: PitchPracticeMessage[] = []
 ): Promise<string> {
-  if (!model) {
-    throw new Error("AI model not initialized properly");
-  }
-
   if (!process.env.GOOGLE_API_KEY) {
     throw new Error("GOOGLE_API_KEY environment variable is not set");
   }
 
-  // Limit history to reduce memory usage
-  const limitedHistory = conversationHistory.slice(-3);
-  
   try {
-    const prompt = `You are a venture capital investor evaluating startups. Be direct and professional. Focus on market opportunity, business model, team, and traction.
+    const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
+    
+    const systemPrompt = `You are a seasoned venture capital investor with 15+ years of experience evaluating startups. 
+You are direct, analytical, and ask tough but fair questions. You focus on:
+- Market size and opportunity
+- Business model viability and unit economics
+- Competitive advantages and moats
+- Team capabilities and execution track record
+- Traction, metrics, and growth potential
+- Capital efficiency and burn rate
 
-Previous conversation:
-${limitedHistory.map(msg => `${msg.role === 'user' ? 'Startup' : 'Investor'}: ${msg.content}`).join('\n')}
+You speak like a real investor - professional but conversational. You challenge assumptions, 
+probe for weaknesses, and ask for specific numbers and evidence. You're skeptical but open-minded.
+When you see potential, you encourage it. When you see red flags, you point them out directly.
 
-Startup: ${userMessage}
+Keep responses concise (2-4 sentences) and always end with a specific follow-up question.`;
 
-Investor:`;
+    // Build conversation history for context
+    const contents = [
+      { role: "user", parts: [{ text: systemPrompt }] },
+      ...conversationHistory.map(msg => ({
+        role: msg.role === 'user' ? 'user' as const : 'model' as const,
+        parts: [{ text: msg.content }]
+      })),
+      { role: "user", parts: [{ text: userMessage }] }
+    ];
 
-    const result = await model.generateContent(prompt);
-    const text = await result.response.text();
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: contents,
+    });
 
-    if (!text) {
-      throw new Error("Empty response from AI model");
-    }
-
-    return text.trim();
+    return response.text || "I'm listening. What else can you tell me about your startup?";
   } catch (error: any) {
     console.error("AI generation error:", error);
     throw new Error(

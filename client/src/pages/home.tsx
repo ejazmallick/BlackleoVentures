@@ -50,7 +50,7 @@ import {
   Download,
   Info,
 } from "lucide-react";
-import logoUrl from "@assets/backleo_1759611500843.png";
+import logoUrl from "@assets/logo blackleo_1759773901852.png";
 import { useEffect, useState, useRef } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { AnimatedCounter } from "@/components/animated-counter";
@@ -365,11 +365,11 @@ export default function Home() {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight" data-testid="text-hero-headline">
-                  One stop shop for your{" "}
-                  <span className="text-primary">startups' success</span>
+                  Secure{" "}
+                  <span className="text-primary">one on one access</span> to investors
                 </h1>
                 <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed" data-testid="text-hero-subheadline">
-                  Secure exclusive one-on-one access to investors. From building your MVP to making you investor-ready; we prepare your startup for growth and provide direct access to vetted capital.
+                  From building your MVP to making you investor-ready; we prepare your startup for growth and provide direct access to vetted capital.
                 </p>
               </div>
               
@@ -692,84 +692,86 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4" data-testid="text-expertise-headline">
+          <div className="space-y-12">
+            <div className="text-center space-y-4">
+              <h3 className="text-4xl md:text-5xl font-bold" data-testid="text-expertise-headline">
                 Our Expertise
               </h3>
-              <p className="text-xl text-muted-foreground">
-                Connecting you with the right investors
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+                Connecting you with the right investors.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="hover-elevate" data-testid="card-expertise-1">
-                <CardHeader className="text-center">
-                  <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <IndianRupee className="h-8 w-8" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-1">
+                <CardHeader className="text-center space-y-4 p-8">
+                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
+                    <IndianRupee className="h-10 w-10" />
                   </div>
-                  <CardTitle className="text-2xl">Funds for Startups</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-2xl font-bold">Funds for Startups</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
                     Direct access to seed, Series A, and growth-stage funding from vetted investors.
                   </CardDescription>
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate" data-testid="card-expertise-2">
-                <CardHeader className="text-center">
-                  <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <Briefcase className="h-8 w-8" />
+              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-2">
+                <CardHeader className="text-center space-y-4 p-8">
+                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
+                    <Briefcase className="h-10 w-10" />
                   </div>
-                  <CardTitle className="text-2xl">Funds for Funds</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-2xl font-bold">Funds for Funds</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
                     Supporting fund managers with LP connections and fund structuring expertise.
                   </CardDescription>
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate" data-testid="card-expertise-3">
-                <CardHeader className="text-center">
-                  <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <Award className="h-8 w-8" />
-                  </div>
-                  <CardTitle className="text-2xl">Grants & Incubation</CardTitle>
-                  <CardDescription className="text-base">
-                    Navigate government grants, incubator programs, and non-dilutive funding opportunities.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              <a href="http://getgrants.in/" target="_blank" rel="noopener noreferrer" className="block" data-testid="link-expertise-grants">
+                <Card className="hover-elevate active-elevate-2 transition-all duration-300 h-full cursor-pointer" data-testid="card-expertise-3">
+                  <CardHeader className="text-center space-y-4 p-8">
+                    <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
+                      <Award className="h-10 w-10" />
+                    </div>
+                    <CardTitle className="text-2xl font-bold">Grants & Incubation Support</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">
+                      Navigate government grants, incubator programs, and non-dilutive funding opportunities.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </a>
 
-              <Card className="hover-elevate" data-testid="card-expertise-4">
-                <CardHeader className="text-center">
-                  <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <FileCheck className="h-8 w-8" />
+              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-4">
+                <CardHeader className="text-center space-y-4 p-8">
+                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
+                    <FileCheck className="h-10 w-10" />
                   </div>
-                  <CardTitle className="text-2xl">Deal Origination</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-2xl font-bold">Deal Origination & Structuring</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
                     End-to-end deal structuring, term sheet negotiation, and transaction execution.
                   </CardDescription>
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate" data-testid="card-expertise-5">
-                <CardHeader className="text-center">
-                  <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <GitMerge className="h-8 w-8" />
+              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-5">
+                <CardHeader className="text-center space-y-4 p-8">
+                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
+                    <GitMerge className="h-10 w-10" />
                   </div>
-                  <CardTitle className="text-2xl">M&A Advisory</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-2xl font-bold">Mergers and Acquisitions</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
                     Strategic mergers and acquisitions guidance for growth and exit opportunities.
                   </CardDescription>
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate" data-testid="card-expertise-6">
-                <CardHeader className="text-center">
-                  <div className="mx-auto p-4 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                    <FileText className="h-8 w-8" />
+              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-6">
+                <CardHeader className="text-center space-y-4 p-8">
+                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
+                    <FileText className="h-10 w-10" />
                   </div>
-                  <CardTitle className="text-2xl">Documentation</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-2xl font-bold">Documentation</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">
                     Comprehensive legal and compliance documentation support for seamless deals.
                   </CardDescription>
                 </CardHeader>

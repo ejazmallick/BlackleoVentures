@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ArrowLeft, Sparkles } from "lucide-react";
-import logoUrl from "@assets/backleo_1759611500843.png";
+import logoUrl from "@assets/logo blackleo_1759773901852.png";
 import { useLocation } from "wouter";
 import { useEffect } from "react";
 

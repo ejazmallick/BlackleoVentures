@@ -57,6 +57,8 @@ import { AnimatedCounter } from "@/components/animated-counter";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
+import { PitchPracticeAI } from "@/components/pitch-practice-ai";
+import { EquityDilutionCalculator } from "@/components/equity-dilution-calculator";
 
 function AnimatedBoardText() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -1290,6 +1292,25 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Tools Section */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-tools-headline">
+              Startup <span className="text-primary">AI Tools</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Free tools powered by AI to help you prepare for fundraising
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <PitchPracticeAI />
+            <EquityDilutionCalculator />
           </div>
         </div>
       </section>

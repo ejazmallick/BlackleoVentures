@@ -13,7 +13,7 @@ import { Card } from "@/components/ui/card";
 type ColorTheme = "yellow" | "violet" | "red";
 
 export function ColorThemeSwitcher() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [currentTheme, setCurrentTheme] = useState<ColorTheme>("yellow");
   const [showIntro, setShowIntro] = useState(true);
 
@@ -71,16 +71,16 @@ export function ColorThemeSwitcher() {
   return (
     <>
       {visible && (
-        <div className="fixed left-4 bottom-24 z-40">
+        <div className="fixed left-4 bottom-28 z-40">
           <Sheet>
             <SheetTrigger asChild>
               <Button
                 size="icon"
-                variant="secondary"
-                className="h-12 w-12 rounded-full shadow-lg hover-elevate"
+                variant="default"
+                className="h-14 w-14 rounded-full shadow-xl hover-elevate border-2 border-background"
                 data-testid="button-color-theme-toggle"
               >
-                <Eye className="h-5 w-5" />
+                <Eye className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-80">
@@ -121,15 +121,13 @@ export function ColorThemeSwitcher() {
       
       <button
         onClick={() => setVisible(!visible)}
-        className="fixed left-0 bottom-6 bg-primary text-primary-foreground px-2 py-4 rounded-r-lg shadow-lg hover-elevate z-50 transition-all flex items-center gap-2 group"
+        className="fixed left-0 bottom-6 bg-primary text-primary-foreground px-3 py-5 rounded-r-lg shadow-xl hover-elevate z-50 transition-all flex items-center gap-2 group"
         data-testid="button-toggle-color-switcher"
       >
-        {visible ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-        {showIntro && !visible && (
-          <span className="text-xs font-medium whitespace-nowrap animate-pulse-slow pr-2">
-            Theme
-          </span>
-        )}
+        {visible ? <EyeOff className="h-6 w-6" /> : <Eye className="h-6 w-6" />}
+        <span className="text-sm font-semibold whitespace-nowrap pr-2">
+          {visible ? "Hide" : "Colors"}
+        </span>
       </button>
     </>
   );

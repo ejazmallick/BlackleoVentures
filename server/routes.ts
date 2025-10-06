@@ -24,10 +24,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error: any) {
       console.error("Pitch practice error:", error);
-      res.status(400).json({ 
-        success: false, 
-        error: error.message || "Failed to generate response" 
-      });
+      
+      // Differentiate between validation and server errors
+      if (error.name === 'ZodError') {
+        res.status(400).json({ 
+          success: false, 
+          error: "Invalid request format" 
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          error: error.message || "Failed to generate investor response. Please try again." 
+        });
+      }
     }
   });
 
@@ -48,10 +57,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error: any) {
       console.error("Equity calculation error:", error);
-      res.status(400).json({ 
-        success: false, 
-        error: error.message || "Failed to calculate equity dilution" 
-      });
+      
+      // Differentiate between validation and calculation errors
+      if (error.name === 'ZodError') {
+        res.status(400).json({ 
+          success: false, 
+          error: "Please enter valid numbers for all fields" 
+        });
+      } else {
+        res.status(500).json({ 
+          success: false, 
+          error: error.message || "Failed to calculate equity dilution. Please try again." 
+        });
+      }
     }
   });
 

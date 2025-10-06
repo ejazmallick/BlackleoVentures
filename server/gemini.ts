@@ -2,7 +2,11 @@ import { GoogleGenAI } from "@google/genai";
 import type { PitchPracticeMessage } from "@shared/schema";
 
 // Using GOOGLE_API_KEY from environment
-const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY || "" });
+if (!process.env.GOOGLE_API_KEY) {
+  throw new Error("GOOGLE_API_KEY environment variable is not set. Please configure your API key.");
+}
+
+const ai = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
 
 export async function generateInvestorResponse(
   userMessage: string,

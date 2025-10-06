@@ -6,11 +6,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Loader2, Send, RotateCcw } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import type { PitchPracticeMessage } from "@shared/schema";
 
 export function PitchPracticeAI() {
   const [message, setMessage] = useState("");
   const [conversationHistory, setConversationHistory] = useState<PitchPracticeMessage[]>([]);
+  const { toast } = useToast();
 
   const pitchMutation = useMutation({
     mutationFn: async (userMessage: string) => {
@@ -18,18 +20,30 @@ export function PitchPracticeAI() {
         message: userMessage,
         conversationHistory,
       });
+      
+      // Check response.ok BEFORE parsing JSON
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: "Failed to generate investor response" })) as { error?: string };
+        throw new Error(errorData.error || "Failed to generate investor response");
+      }
+      
       const data = await response.json() as { success: boolean; response: string };
       return data;
     },
     onSuccess: (data) => {
-      if (data.success) {
-        setConversationHistory(prev => [
-          ...prev,
-          { role: 'user', content: message },
-          { role: 'assistant', content: data.response }
-        ]);
-        setMessage("");
-      }
+      setConversationHistory(prev => [
+        ...prev,
+        { role: 'user' as const, content: message },
+        { role: 'assistant' as const, content: data.response }
+      ]);
+      setMessage("");
+    },
+    onError: (error: Error) => {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: error.message || "Failed to get investor response. Please try again.",
+      });
     },
   });
 

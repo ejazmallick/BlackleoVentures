@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Calculator, TrendingDown } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import type { EquityCalculationResult } from "@shared/schema";
 
 export function EquityDilutionCalculator() {
@@ -13,6 +14,7 @@ export function EquityDilutionCalculator() {
   const [fundraisingAmount, setFundraisingAmount] = useState<string>("");
   const [preMoneyValuation, setPreMoneyValuation] = useState<string>("");
   const [result, setResult] = useState<EquityCalculationResult | null>(null);
+  const { toast } = useToast();
 
   const calculateMutation = useMutation({
     mutationFn: async () => {
@@ -21,13 +23,25 @@ export function EquityDilutionCalculator() {
         fundraisingAmount: parseFloat(fundraisingAmount),
         preMoneyValuation: parseFloat(preMoneyValuation),
       });
+      
+      // Check response.ok BEFORE parsing JSON
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ error: "Failed to calculate equity dilution" })) as { error?: string };
+        throw new Error(errorData.error || "Failed to calculate equity dilution");
+      }
+      
       const data = await response.json() as { success: boolean; result: EquityCalculationResult };
       return data;
     },
     onSuccess: (data) => {
-      if (data.success) {
-        setResult(data.result);
-      }
+      setResult(data.result);
+    },
+    onError: (error: Error) => {
+      toast({
+        variant: "destructive",
+        title: "Calculation Error",
+        description: error.message || "Failed to calculate equity dilution. Please check your inputs.",
+      });
     },
   });
 
@@ -38,11 +52,12 @@ export function EquityDilutionCalculator() {
     }
   };
 
-  const formatCurrency = (value: number) => {
+  const formatCurrency = (value: number, showDecimals: boolean = false) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
       currency: 'INR',
-      maximumFractionDigits: 0,
+      minimumFractionDigits: showDecimals ? 2 : 0,
+      maximumFractionDigits: showDecimals ? 2 : 0,
     }).format(value);
   };
 
@@ -156,7 +171,7 @@ export function EquityDilutionCalculator() {
               <div className="space-y-1">
                 <p className="text-sm text-muted-foreground">Share Price</p>
                 <p className="text-lg font-semibold" data-testid="text-share-price">
-                  {formatCurrency(result.sharePrice)}
+                  {formatCurrency(result.sharePrice, true)}
                 </p>
               </div>
             </div>

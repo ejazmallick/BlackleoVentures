@@ -1,0 +1,87 @@
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { GoogleGenAI } from "@google/genai";
+import { pitchPracticeRequestSchema, type PitchPracticeMessage } from "../shared/schema";
+
+let aiInstance: GoogleGenAI | null = null;
+
+function getAI() {
+  if (!aiInstance) {
+    if (!process.env.GOOGLE_API_KEY) {
+      throw new Error("GOOGLE_API_KEY environment variable is not set");
+    }
+    aiInstance = new GoogleGenAI({ apiKey: process.env.GOOGLE_API_KEY });
+  }
+  return aiInstance;
+}
+
+async function generateInvestorResponse(
+  userMessage: string,
+  conversationHistory: PitchPracticeMessage[] = []
+): Promise<string> {
+  const ai = getAI();
+  
+  const systemPrompt = `You are a seasoned venture capital investor with 15+ years of experience evaluating startups. 
+You are direct, analytical, and ask tough but fair questions. You focus on:
+- Market size and opportunity
+- Business model viability and unit economics
+- Competitive advantages and moats
+- Team capabilities and execution track record
+- Traction, metrics, and growth potential
+- Capital efficiency and burn rate
+
+You speak like a real investor - professional but conversational. You challenge assumptions, 
+probe for weaknesses, and ask for specific numbers and evidence. You're skeptical but open-minded.
+When you see potential, you encourage it. When you see red flags, you point them out directly.
+
+Keep responses concise (2-4 sentences) and always end with a specific follow-up question.`;
+
+  const contents = [
+    { role: "user", parts: [{ text: systemPrompt }] },
+    ...conversationHistory.map(msg => ({
+      role: msg.role === 'user' ? 'user' as const : 'model' as const,
+      parts: [{ text: msg.content }]
+    })),
+    { role: "user", parts: [{ text: userMessage }] }
+  ];
+
+  const response = await ai.models.generateContent({
+    model: "gemini-2.0-flash-exp",
+    contents: contents,
+  });
+
+  return response.text || "I'm listening. What else can you tell me about your startup?";
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
+  }
+
+  try {
+    const validated = pitchPracticeRequestSchema.parse(req.body);
+    
+    const investorResponse = await generateInvestorResponse(
+      validated.message,
+      validated.conversationHistory
+    );
+
+    return res.status(200).json({ 
+      success: true, 
+      response: investorResponse 
+    });
+  } catch (error: any) {
+    console.error("Pitch practice error:", error);
+    
+    if (error.name === 'ZodError') {
+      return res.status(400).json({ 
+        success: false, 
+        error: "Invalid request format" 
+      });
+    }
+    
+    return res.status(500).json({ 
+      success: false, 
+      error: error.message || "Failed to generate investor response. Please try again." 
+    });
+  }
+}

@@ -372,10 +372,10 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap md:flex-nowrap gap-3 md:gap-4">
                 <Button
                   size="lg"
-                  className="text-lg relative overflow-hidden group"
+                  className="text-lg relative overflow-hidden group w-full sm:w-auto"
                   asChild
                   data-testid="button-pitch-deck-audit"
                 >
@@ -388,7 +388,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="text-lg"
+                  className="text-lg w-full sm:w-auto"
                   asChild
                   data-testid="button-schedule-meeting"
                 >
@@ -1147,7 +1147,7 @@ export default function Home() {
             <p className="text-lg text-muted-foreground mb-6">
               Ready to discuss your specific pricing? Schedule a free consultation
             </p>
-            <Button size="lg" asChild data-testid="button-pricing-consultation">
+            <Button size="lg" className="w-full sm:w-auto" asChild data-testid="button-pricing-consultation">
               <a href="https://zcal.co/blackleoventures/30min" target="_blank" rel="noopener noreferrer">
                 <Calendar className="mr-2 h-5 w-5" />
                 Book Free Consultation
@@ -1243,11 +1243,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap md:flex-nowrap gap-3 md:gap-4 justify-center">
               <Button
                 size="lg"
                 variant="secondary"
-                className="text-lg"
+                className="text-lg w-full sm:w-auto"
                 asChild
                 data-testid="button-cta-apply"
               >
@@ -1259,7 +1259,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg border-primary-foreground/20 hover:bg-primary-foreground/10"
+                className="text-lg border-primary-foreground/20 hover:bg-primary-foreground/10 w-full sm:w-auto"
                 asChild
                 data-testid="button-cta-schedule"
               >
@@ -1306,7 +1306,7 @@ export default function Home() {
               <div className="pt-4">
                 <Button 
                   asChild
-                  className="w-full"
+                  className="w-full md:w-auto"
                   data-testid="button-footer-consultation"
                 >
                   <a href="https://wa.me/917837059633?text=Hi%2C%20I%27m%20interested%20in%20booking%20a%20consultation%20with%20Black%20Leo%20Ventures.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer">

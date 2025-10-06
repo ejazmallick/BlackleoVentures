@@ -11,3 +11,5 @@
 [x] 11. Update hero "Your Growth Partner" box with animation
 [x] 12. Add BHAWNA CHOURASIYA as third director
 [x] 13. Final verification: Dependencies installed, workflow running successfully, website displaying correctly
+[x] 14. Add black borders to yellow text throughout the site
+[x] 15. Fix button responsiveness on tablets

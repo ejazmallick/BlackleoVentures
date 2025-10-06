@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { equityCalculationRequestSchema } from "../shared/schema";
+import { equityCalculationRequestSchema } from "./schemas";
 
 function calculateEquityDilution(
   currentOwnership: number,

@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenAI } from "@google/genai";
-import { pitchPracticeRequestSchema, type PitchPracticeMessage } from "../shared/schema";
+import { pitchPracticeRequestSchema, type PitchPracticeMessage } from "./schemas";
 
 let aiInstance: GoogleGenAI | null = null;
 

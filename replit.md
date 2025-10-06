@@ -110,13 +110,13 @@ vercel --prod
 - 2025-10-06: Yellow color theme transformation
   - Updated color scheme from orange to yellow-based theme (#FFD700 primary)
   - Added alternative color themes: Violet (#8A2BE2) and Red (#FF4500)
-  - Created ColorThemeSwitcher component with discoverable eye button on left edge
+  - Created ColorThemeSwitcher component with discoverable eye button in bottom left
   - Implemented 5-second intro animation showing "Theme" label for discoverability
   - Added 5th service "Pitch Deck Analysis & Improvement" to Our 5-Point Advantage
   - Enhanced "Your Growth Partner" hero box with animated rotating text messages
-  - Added timeline disclaimer to "Our 4-Step Funding System"
+  - Added timeline disclaimer to "Our 4-Step Funding System" (updated to use "startup's")
   - Made logo clickable to redirect to home page on all pages
-  - Added BHAWNA CHOURASIYA as third director in About Us page
+  - Leadership team displays 2 directors: Nirdosh Arora and Utkarsh Chourasiya
 - 2025-10-05: Masterpiece design transformation
   - Implemented complete dark/light mode system with ThemeProvider and persistent theme toggle
   - Added transparent pricing section with detailed fee breakdown (consulting + success fees)

@@ -71,7 +71,7 @@ export function ColorThemeSwitcher() {
   return (
     <>
       {visible && (
-        <div className="fixed left-4 top-1/2 -translate-y-1/2 z-40">
+        <div className="fixed left-4 bottom-24 z-40">
           <Sheet>
             <SheetTrigger asChild>
               <Button
@@ -121,7 +121,7 @@ export function ColorThemeSwitcher() {
       
       <button
         onClick={() => setVisible(!visible)}
-        className="fixed left-0 top-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-2 py-4 rounded-r-lg shadow-lg hover-elevate z-50 transition-all flex items-center gap-2 group"
+        className="fixed left-0 bottom-6 bg-primary text-primary-foreground px-2 py-4 rounded-r-lg shadow-lg hover-elevate z-50 transition-all flex items-center gap-2 group"
         data-testid="button-toggle-color-switcher"
       >
         {visible ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}

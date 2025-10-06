@@ -999,7 +999,7 @@ export default function Home() {
           
           <div className="mt-8 text-center">
             <p className="text-sm text-muted-foreground italic" data-testid="text-timeline-disclaimer">
-              * Timeline is approximate and may vary based on individual startup requirements. Not guaranteed.
+              * Timeline is approximate and may vary based on individual startup's requirements. Not guaranteed.
             </p>
           </div>
         </div>

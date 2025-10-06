@@ -96,7 +96,7 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Director 1 */}
             <Card className="hover-elevate" data-testid="card-director-1">
               <CardHeader className="text-center space-y-6">
@@ -163,38 +163,6 @@ export default function About() {
               </CardContent>
             </Card>
 
-            {/* Director 3 */}
-            <Card className="hover-elevate" data-testid="card-director-3">
-              <CardHeader className="text-center space-y-6">
-                <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
-                  <span className="text-4xl font-bold text-primary">BC</span>
-                </div>
-                <div className="space-y-2">
-                  <CardTitle className="text-2xl">Bhawna Chourasiya</CardTitle>
-                  <CardDescription className="text-base font-medium text-primary">
-                    Director
-                  </CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-center gap-2 pt-4">
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="flex-1"
-                    data-testid="button-email-bhawna"
-                  >
-                    <a href="mailto:bhawna@blackleoventures.com">
-                      <Mail className="mr-2 h-4 w-4" />
-                      Email
-                    </a>
-                  </Button>
-                </div>
-                <div className="text-center text-sm text-muted-foreground">
-                  bhawna@blackleoventures.com
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

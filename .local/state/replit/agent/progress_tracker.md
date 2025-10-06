@@ -13,3 +13,6 @@
 [x] 13. Final verification: Dependencies installed, workflow running successfully, website displaying correctly
 [x] 14. Add black borders to yellow text throughout the site
 [x] 15. Fix button responsiveness on tablets
+[x] 16. Configure Google API key for Gemini AI integration
+[x] 17. Final workflow restart and verification
+[x] 18. Complete migration import

@@ -39,7 +39,7 @@ Keep responses concise (2-4 sentences) and always end with a specific follow-up 
     ];
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash-exp",
+      model: "gemini-2.0-flash",
       contents: contents,
     });
 

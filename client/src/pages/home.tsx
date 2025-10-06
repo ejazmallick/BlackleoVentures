@@ -57,8 +57,7 @@ import { AnimatedCounter } from "@/components/animated-counter";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
-import { PitchPracticeAI } from "@/components/pitch-practice-ai";
-import { EquityDilutionCalculator } from "@/components/equity-dilution-calculator";
+import { MotivationalFacts } from "@/components/motivational-facts";
 
 function AnimatedBoardText() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -1229,12 +1228,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Motivational Facts Section */}
+      <ScrollReveal>
+        <section className="py-16 md:py-24 bg-muted/30">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Inspiring <span className="text-primary">Facts</span> for Indian Entrepreneurs
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                You're building the future of India's economy
+              </p>
+            </div>
+            <MotivationalFacts />
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* Final CTA Section */}
       <section className="py-24 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground" id="contact">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-cta-headline">
+              <h2 className="text-4xl md:text-5xl font-bold" style={{ textShadow: "0 2px 4px rgba(0,0,0,0.3)" }} data-testid="text-cta-headline">
                 Ready to Start Your Funding Journey?
               </h2>
               <p className="text-xl md:text-2xl opacity-90">
@@ -1260,8 +1276,8 @@ export default function Home() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="text-lg border-primary-foreground/20 hover:bg-primary-foreground/10 w-full sm:w-auto"
+                variant="secondary"
+                className="text-lg w-full sm:w-auto"
                 asChild
                 data-testid="button-cta-schedule"
               >
@@ -1292,25 +1308,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AI Tools Section */}
-      <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-tools-headline">
-              Startup <span className="text-primary">AI Tools</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Free tools powered by AI to help you prepare for fundraising
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8">
-            <PitchPracticeAI />
-            <EquityDilutionCalculator />
           </div>
         </div>
       </section>
@@ -1354,6 +1351,7 @@ export default function Home() {
                 <li><a href="#case-studies" className="hover:text-foreground transition-colors" data-testid="link-footer-cases">Case Studies</a></li>
                 <li><a href="#process" className="hover:text-foreground transition-colors" data-testid="link-footer-process">Our Process</a></li>
                 <li><a href="#faq" className="hover:text-foreground transition-colors" data-testid="link-footer-faq">FAQ</a></li>
+                <li><a href="/tools" className="hover:text-foreground transition-colors" data-testid="link-footer-tools">AI Tools</a></li>
                 <li><a href="#contact" className="hover:text-foreground transition-colors" data-testid="link-footer-contact">Contact</a></li>
               </ul>
             </div>

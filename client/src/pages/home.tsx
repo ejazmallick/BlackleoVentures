@@ -432,103 +432,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Indian Startup Facts Slider */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              India's Startup Ecosystem: Fast Facts
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Why India is the perfect launchpad for your startup
-            </p>
-          </div>
-          
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full max-w-6xl mx-auto"
-          >
-            <CarouselContent className="-ml-4">
-              <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-primary/20 h-full">
-                  <CardHeader className="text-center space-y-4">
-                    <div className="text-5xl font-bold text-primary">3rd</div>
-                    <CardTitle className="text-xl">Largest Startup Ecosystem</CardTitle>
-                    <CardDescription className="text-base">
-                      India ranks 3rd globally with 100,000+ startups, right after the US and China
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-primary/20 h-full">
-                  <CardHeader className="text-center space-y-4">
-                    <div className="text-5xl font-bold text-primary">110+</div>
-                    <CardTitle className="text-xl">Unicorn Startups</CardTitle>
-                    <CardDescription className="text-base">
-                      India has created 110+ unicorns valued at over $1 billion each
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-primary/20 h-full">
-                  <CardHeader className="text-center space-y-4">
-                    <div className="text-5xl font-bold text-primary">$25B+</div>
-                    <CardTitle className="text-xl">Annual Funding</CardTitle>
-                    <CardDescription className="text-base">
-                      Indian startups raised over $25 billion in funding in recent years
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-primary/20 h-full">
-                  <CardHeader className="text-center space-y-4">
-                    <div className="text-5xl font-bold text-primary">1.4B</div>
-                    <CardTitle className="text-xl">Market Opportunity</CardTitle>
-                    <CardDescription className="text-base">
-                      Access to India's 1.4 billion population - the world's largest consumer market
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-primary/20 h-full">
-                  <CardHeader className="text-center space-y-4">
-                    <div className="text-5xl font-bold text-primary">850M+</div>
-                    <CardTitle className="text-xl">Internet Users</CardTitle>
-                    <CardDescription className="text-base">
-                      India has 850+ million internet users, creating massive digital opportunities
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </CarouselItem>
-
-              <CarouselItem className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <Card className="border-2 border-primary/20 h-full">
-                  <CardHeader className="text-center space-y-4">
-                    <div className="text-5xl font-bold text-primary">50+</div>
-                    <CardTitle className="text-xl">Government Schemes</CardTitle>
-                    <CardDescription className="text-base">
-                      Startup India and other initiatives provide grants, tax benefits, and support
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
-          </Carousel>
-        </div>
-      </section>
 
       {/* Pain Points Section */}
       <section className="py-24 md:py-32 bg-card" id="pain-points">
@@ -692,21 +595,27 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="space-y-12">
-            <div className="text-center space-y-4">
-              <h3 className="text-4xl md:text-5xl font-bold" data-testid="text-expertise-headline">
-                Our Expertise
+          <div className="space-y-16 mt-16">
+            <div className="text-center space-y-6">
+              <div className="inline-block">
+                <Badge variant="outline" className="text-base px-6 py-2 mb-4">
+                  <Target className="w-5 h-5 mr-2" />
+                  Our Expertise
+                </Badge>
+              </div>
+              <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold" data-testid="text-expertise-headline">
+                Comprehensive Solutions for <span className="text-primary">Your Success</span>
               </h3>
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-                Connecting you with the right investors.
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                From funding to strategic growth, we provide end-to-end support tailored to your startup's unique needs.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-1">
-                <CardHeader className="text-center space-y-4 p-8">
-                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
-                    <IndianRupee className="h-10 w-10" />
+              <Card className="hover-elevate transition-all duration-300 border-2 border-primary/10" data-testid="card-expertise-1">
+                <CardHeader className="text-center space-y-5 p-10">
+                  <div className="mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary w-fit shadow-lg">
+                    <IndianRupee className="h-12 w-12" />
                   </div>
                   <CardTitle className="text-2xl font-bold">Funds for Startups</CardTitle>
                   <CardDescription className="text-base leading-relaxed">
@@ -715,10 +624,10 @@ export default function Home() {
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-2">
-                <CardHeader className="text-center space-y-4 p-8">
-                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
-                    <Briefcase className="h-10 w-10" />
+              <Card className="hover-elevate transition-all duration-300 border-2 border-primary/10" data-testid="card-expertise-2">
+                <CardHeader className="text-center space-y-5 p-10">
+                  <div className="mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary w-fit shadow-lg">
+                    <Briefcase className="h-12 w-12" />
                   </div>
                   <CardTitle className="text-2xl font-bold">Funds for Funds</CardTitle>
                   <CardDescription className="text-base leading-relaxed">
@@ -728,10 +637,10 @@ export default function Home() {
               </Card>
 
               <a href="http://getgrants.in/" target="_blank" rel="noopener noreferrer" className="block" data-testid="link-expertise-grants">
-                <Card className="hover-elevate active-elevate-2 transition-all duration-300 h-full cursor-pointer" data-testid="card-expertise-3">
-                  <CardHeader className="text-center space-y-4 p-8">
-                    <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
-                      <Award className="h-10 w-10" />
+                <Card className="hover-elevate active-elevate-2 transition-all duration-300 border-2 border-primary/10 h-full cursor-pointer" data-testid="card-expertise-3">
+                  <CardHeader className="text-center space-y-5 p-10">
+                    <div className="mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary w-fit shadow-lg">
+                      <Award className="h-12 w-12" />
                     </div>
                     <CardTitle className="text-2xl font-bold">Grants & Incubation Support</CardTitle>
                     <CardDescription className="text-base leading-relaxed">
@@ -741,10 +650,10 @@ export default function Home() {
                 </Card>
               </a>
 
-              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-4">
-                <CardHeader className="text-center space-y-4 p-8">
-                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
-                    <FileCheck className="h-10 w-10" />
+              <Card className="hover-elevate transition-all duration-300 border-2 border-primary/10" data-testid="card-expertise-4">
+                <CardHeader className="text-center space-y-5 p-10">
+                  <div className="mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary w-fit shadow-lg">
+                    <FileCheck className="h-12 w-12" />
                   </div>
                   <CardTitle className="text-2xl font-bold">Deal Origination & Structuring</CardTitle>
                   <CardDescription className="text-base leading-relaxed">
@@ -753,10 +662,10 @@ export default function Home() {
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-5">
-                <CardHeader className="text-center space-y-4 p-8">
-                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
-                    <GitMerge className="h-10 w-10" />
+              <Card className="hover-elevate transition-all duration-300 border-2 border-primary/10" data-testid="card-expertise-5">
+                <CardHeader className="text-center space-y-5 p-10">
+                  <div className="mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary w-fit shadow-lg">
+                    <GitMerge className="h-12 w-12" />
                   </div>
                   <CardTitle className="text-2xl font-bold">Mergers and Acquisitions</CardTitle>
                   <CardDescription className="text-base leading-relaxed">
@@ -765,10 +674,10 @@ export default function Home() {
                 </CardHeader>
               </Card>
 
-              <Card className="hover-elevate transition-all duration-300" data-testid="card-expertise-6">
-                <CardHeader className="text-center space-y-4 p-8">
-                  <div className="mx-auto p-5 rounded-2xl bg-primary/10 text-primary w-fit">
-                    <FileText className="h-10 w-10" />
+              <Card className="hover-elevate transition-all duration-300 border-2 border-primary/10" data-testid="card-expertise-6">
+                <CardHeader className="text-center space-y-5 p-10">
+                  <div className="mx-auto p-6 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 text-primary w-fit shadow-lg">
+                    <FileText className="h-12 w-12" />
                   </div>
                   <CardTitle className="text-2xl font-bold">Documentation</CardTitle>
                   <CardDescription className="text-base leading-relaxed">
@@ -803,8 +712,12 @@ export default function Home() {
                 <CardDescription className="text-base leading-relaxed space-y-3">
                   <p className="font-semibold text-foreground">Founded: 2021 | Valuation: $3.6B</p>
                   <p>Two 19-year-old Stanford dropouts built India's fastest-growing quick commerce platform. Raised over $1.4 billion from top-tier investors including Y Combinator, Nexus Venture Partners, and Glade Brook Capital.</p>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm font-semibold text-primary">Key Success Factor: Solved hyperlocal delivery with tech-driven dark stores</p>
+                  <div className="pt-4 mt-4 border-t border-primary/20">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="text-base font-bold text-primary">
+                        Key Success Factor: Solved hyperlocal delivery with tech-driven dark stores
+                      </p>
+                    </div>
                   </div>
                 </CardDescription>
               </CardHeader>
@@ -819,8 +732,12 @@ export default function Home() {
                 <CardDescription className="text-base leading-relaxed space-y-3">
                   <p className="font-semibold text-foreground">Founded: 2018 | Valuation: $6.4B</p>
                   <p>Kunal Shah's second unicorn created a members-only club for creditworthy Indians. Raised funding from Sequoia Capital, Ribbit Capital, and Tiger Global with innovative reward mechanisms.</p>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm font-semibold text-primary">Key Success Factor: Gamified credit card payments with exclusive rewards</p>
+                  <div className="pt-4 mt-4 border-t border-primary/20">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="text-base font-bold text-primary">
+                        Key Success Factor: Gamified credit card payments with exclusive rewards
+                      </p>
+                    </div>
                   </div>
                 </CardDescription>
               </CardHeader>
@@ -835,8 +752,12 @@ export default function Home() {
                 <CardDescription className="text-base leading-relaxed space-y-3">
                   <p className="font-semibold text-foreground">Founded: 2020 | Valuation: $2.8B</p>
                   <p>Started as YouTube channel, Alakh Pandey built India's most affordable ed-tech platform. Achieved unicorn status with backing from Westbridge Capital and GSV Ventures, serving 10M+ students.</p>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm font-semibold text-primary">Key Success Factor: Quality education at 1/10th the cost of competitors</p>
+                  <div className="pt-4 mt-4 border-t border-primary/20">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="text-base font-bold text-primary">
+                        Key Success Factor: Quality education at 1/10th the cost of competitors
+                      </p>
+                    </div>
                   </div>
                 </CardDescription>
               </CardHeader>
@@ -851,8 +772,12 @@ export default function Home() {
                 <CardDescription className="text-base leading-relaxed space-y-3">
                   <p className="font-semibold text-foreground">Founded: 2014 | Valuation: $5.6B</p>
                   <p>Abhinav Asthana built the world's leading API platform from Bengaluru. Now used by 25M+ developers globally with funding from Insight Partners, Nexus Venture Partners, and CRV.</p>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm font-semibold text-primary">Key Success Factor: Solved global API development pain point</p>
+                  <div className="pt-4 mt-4 border-t border-primary/20">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="text-base font-bold text-primary">
+                        Key Success Factor: Solved global API development pain point
+                      </p>
+                    </div>
                   </div>
                 </CardDescription>
               </CardHeader>
@@ -867,8 +792,12 @@ export default function Home() {
                 <CardDescription className="text-base leading-relaxed space-y-3">
                   <p className="font-semibold text-foreground">Founded: 2015 | Valuation: $5.6B</p>
                   <p>Dharmil Sheth and Dhaval Shah revolutionized medicine delivery in India. Raised funding from TPG, Prosus Ventures, and Temasek, serving 100+ cities with 90M+ deliveries.</p>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm font-semibold text-primary">Key Success Factor: Made healthcare accessible and affordable pan-India</p>
+                  <div className="pt-4 mt-4 border-t border-primary/20">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="text-base font-bold text-primary">
+                        Key Success Factor: Made healthcare accessible and affordable pan-India
+                      </p>
+                    </div>
                   </div>
                 </CardDescription>
               </CardHeader>
@@ -883,8 +812,12 @@ export default function Home() {
                 <CardDescription className="text-base leading-relaxed space-y-3">
                   <p className="font-semibold text-foreground">Founded: 2011 | Market Cap: $5B+</p>
                   <p>Sahil Barua built India's largest logistics network from scratch. Successfully IPO'd with backing from SoftBank, Tiger Global, and Carlyle Group, handling 2B+ shipments annually.</p>
-                  <div className="pt-3 border-t">
-                    <p className="text-sm font-semibold text-primary">Key Success Factor: Built tech-first logistics infrastructure for e-commerce boom</p>
+                  <div className="pt-4 mt-4 border-t border-primary/20">
+                    <div className="bg-primary/10 rounded-lg p-3">
+                      <p className="text-base font-bold text-primary">
+                        Key Success Factor: Built tech-first logistics infrastructure for e-commerce boom
+                      </p>
+                    </div>
                   </div>
                 </CardDescription>
               </CardHeader>

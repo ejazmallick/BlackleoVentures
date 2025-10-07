@@ -2,12 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, ArrowLeft, Linkedin, Download } from "lucide-react";
 import logoUrl from "@assets/logo blackleo_1759773901852.png";
-import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
 
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
-      <ColorThemeSwitcher />
       {/* Navigation */}
       <div className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <div className="max-w-7xl mx-auto px-6 py-6">

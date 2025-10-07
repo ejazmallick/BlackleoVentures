@@ -56,7 +56,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
-import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
 import { MotivationalFacts } from "@/components/motivational-facts";
 
 function AnimatedBoardText() {
@@ -215,7 +214,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <FloatingWhatsApp />
-      <ColorThemeSwitcher />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-6">

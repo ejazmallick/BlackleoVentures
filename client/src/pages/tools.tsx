@@ -3,7 +3,6 @@ import { PitchPracticeAI } from "@/components/pitch-practice-ai";
 import { EquityDilutionCalculator } from "@/components/equity-dilution-calculator";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { ColorThemeSwitcher } from "@/components/color-theme-switcher";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import logoUrl from "@assets/logo blackleo_1759773901852.png";
@@ -25,7 +24,6 @@ export default function Tools() {
   return (
     <div className="min-h-screen bg-background">
       <FloatingWhatsApp />
-      <ColorThemeSwitcher />
 
       <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 py-6">

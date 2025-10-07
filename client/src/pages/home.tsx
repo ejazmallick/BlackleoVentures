@@ -1250,7 +1250,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
-              <img src={logoUrl} alt="Black Leo Ventures" className="h-10 w-auto" data-testid="img-footer-logo" />
+              <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto" data-testid="img-footer-logo" />
               <p className="text-sm text-muted-foreground">
                 Your startup growth partner - From idea to scale
               </p>
@@ -1285,6 +1285,7 @@ export default function Home() {
                 <li><a href="#process" className="hover:text-foreground transition-colors" data-testid="link-footer-process">Our Process</a></li>
                 <li><a href="#faq" className="hover:text-foreground transition-colors" data-testid="link-footer-faq">FAQ</a></li>
                 <li><a href="/tools" className="hover:text-foreground transition-colors" data-testid="link-footer-tools">AI Tools</a></li>
+                <li><a href="/theme" className="hover:text-foreground transition-colors" data-testid="link-footer-theme">Theme</a></li>
                 <li><a href="#contact" className="hover:text-foreground transition-colors" data-testid="link-footer-contact">Contact</a></li>
               </ul>
             </div>

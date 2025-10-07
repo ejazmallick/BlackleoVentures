@@ -57,82 +57,78 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { MotivationalFacts } from "@/components/motivational-facts";
 
-function MissionControlDisplay() {
-  const [currentScene, setCurrentScene] = useState(0);
+function ServiceShowcase() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   
-  const scenes = [
+  const slides = [
     {
-      type: "metrics",
-      headline: "₹250Cr+ Capital Deployed",
-      metric: "47",
-      metricLabel: "Startups Funded in 2024",
-      caption: "Average funding round: ₹5.3Cr"
+      title: "Strategic Fundraising",
+      description: "We connect ambitious startups with the right investors, ensuring every introduction is targeted, meaningful, and aligned with your growth stage.",
+      highlight: "Direct Access to Vetted Capital"
     },
     {
-      type: "spotlight",
-      headline: "Recent Success",
-      metric: "2.8x",
-      metricLabel: "Avg. Valuation Growth",
-      caption: "EduTech startup secured Series A in 45 days"
+      title: "Investor-Ready Transformation",
+      description: "From pitch deck refinement to financial modeling, we prepare every aspect of your startup to meet investor expectations and close deals faster.",
+      highlight: "Complete Due Diligence Support"
     },
     {
-      type: "activity",
-      headline: "Live Pipeline",
-      metric: "23",
-      metricLabel: "Active Investor Meetings",
-      caption: "FinTech & HealthTech seeing high interest"
+      title: "End-to-End Growth Partnership",
+      description: "Beyond funding, we guide you through MVP development, market validation, and scaling strategies to build a sustainable, investor-attractive business.",
+      highlight: "Your Success is Our Mission"
     }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentScene((prev) => (prev + 1) % scenes.length);
-    }, 4000);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [scenes.length]);
+  }, [slides.length]);
 
   return (
-    <div className="relative w-full h-full">
-      {scenes.map((scene, index) => (
+    <div className="relative w-full h-full p-4 md:p-6 flex flex-col justify-between">
+      {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-all duration-1000 ${
-            index === currentScene
+          className={`absolute inset-4 md:inset-6 flex flex-col justify-center transition-all duration-700 ${
+            index === currentSlide
               ? "opacity-100 scale-100"
               : "opacity-0 scale-95 pointer-events-none"
           }`}
-          data-testid={`scene-${scene.type}`}
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-4">
-            <div className="text-primary text-sm font-mono uppercase tracking-wider">
-              {scene.type === "metrics" && "📊 METRICS PULSE"}
-              {scene.type === "spotlight" && "⭐ FOUNDER SPOTLIGHT"}
-              {scene.type === "activity" && "🔥 INVESTOR RADAR"}
-            </div>
-            
-            <h3 className="text-white text-2xl md:text-3xl font-bold text-center">
-              {scene.headline}
+          <div className="space-y-4 md:space-y-6 text-center px-2 md:px-4">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">
+              {slide.title}
             </h3>
             
-            <div className="flex items-baseline gap-3">
-              <AnimatedCounter 
-                end={parseInt(scene.metric.replace(/[^0-9]/g, ''))} 
-                className="text-5xl md:text-6xl font-bold text-primary"
-              />
-              <span className="text-xl text-primary">{scene.metric.replace(/[0-9]/g, '')}</span>
+            <p className="text-sm md:text-base text-zinc-300 leading-relaxed max-w-lg mx-auto">
+              {slide.description}
+            </p>
+            
+            <div className="pt-2 md:pt-4">
+              <div className="inline-block px-4 py-2 md:px-6 md:py-2 rounded-full bg-primary/20 border border-primary/40">
+                <p className="text-xs md:text-sm font-semibold text-primary">
+                  {slide.highlight}
+                </p>
+              </div>
             </div>
-            
-            <p className="text-zinc-400 text-sm font-medium">
-              {scene.metricLabel}
-            </p>
-            
-            <p className="text-zinc-500 text-xs italic border-t border-zinc-700 pt-3 mt-2">
-              {scene.caption}
-            </p>
           </div>
         </div>
       ))}
+      
+      <div className="absolute bottom-4 md:bottom-6 left-0 right-0 flex justify-center gap-2">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`h-1 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? "w-8 bg-primary"
+                : "w-2 bg-zinc-600"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -453,52 +449,29 @@ export default function Home() {
 
             <div className="relative lg:block hidden">
               {/* TV/Display Frame */}
-              <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-800 dark:from-zinc-950 dark:to-zinc-900 p-6 shadow-2xl border-8 border-zinc-800 dark:border-zinc-950" data-testid="card-growth-partner">
+              <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-800 dark:from-zinc-950 dark:to-zinc-900 p-4 md:p-6 shadow-2xl border-8 border-zinc-800 dark:border-zinc-950" data-testid="card-growth-partner">
                 {/* Screen Bezel */}
-                <div className="absolute inset-4 rounded-lg border-2 border-zinc-700 dark:border-zinc-800"></div>
+                <div className="absolute inset-3 md:inset-4 rounded-lg border-2 border-zinc-700 dark:border-zinc-800"></div>
                 
                 {/* Screen Content */}
                 <div className="relative h-full rounded-lg bg-gradient-to-br from-black to-zinc-900 overflow-hidden border border-zinc-700">
-                  {/* Scanline Effect */}
-                  <div className="absolute inset-0 pointer-events-none z-10 opacity-10">
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent animate-pulse-slow"></div>
+                  {/* Subtle Scanline Effect */}
+                  <div className="absolute inset-0 pointer-events-none z-10 opacity-5">
                     <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.03)_2px,rgba(255,255,255,0.03)_4px)]"></div>
                   </div>
                   
                   {/* Content Display */}
-                  <div className="relative h-full p-6 flex flex-col z-20">
+                  <div className="relative h-full flex flex-col z-20">
                     {/* Header */}
-                    <div className="text-center space-y-2 pb-4 border-b border-primary/30">
-                      <div className="text-2xl font-bold text-primary tracking-wide" data-testid="text-board-title">
+                    <div className="text-center py-3 md:py-4 border-b border-primary/20">
+                      <div className="text-lg md:text-xl lg:text-2xl font-bold text-primary tracking-wide" data-testid="text-board-title">
                         YOUR GROWTH PARTNER
                       </div>
-                      <div className="flex items-center justify-center gap-2 text-xs text-primary/60 font-mono uppercase tracking-wider">
-                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                        Live Broadcast
-                      </div>
                     </div>
                     
-                    {/* Main Content - Mission Control Display */}
-                    <div className="flex-1 relative">
-                      <MissionControlDisplay />
-                    </div>
-                    
-                    {/* Bottom Status Bar */}
-                    <div className="flex items-center justify-between pt-3 border-t border-primary/30">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <span className="text-xs text-zinc-400 font-mono">BROADCASTING</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-xs text-zinc-500 font-mono">
-                        <div className="flex gap-1">
-                          <div className="w-1 h-3 bg-primary/40 animate-pulse"></div>
-                          <div className="w-1 h-4 bg-primary/60 animate-pulse" style={{animationDelay: "0.1s"}}></div>
-                          <div className="w-1 h-3 bg-primary/40 animate-pulse" style={{animationDelay: "0.2s"}}></div>
-                          <div className="w-1 h-5 bg-primary/80 animate-pulse" style={{animationDelay: "0.3s"}}></div>
-                          <div className="w-1 h-3 bg-primary/40 animate-pulse" style={{animationDelay: "0.4s"}}></div>
-                        </div>
-                        <span>AUDIO</span>
-                      </div>
+                    {/* Main Content - Service Showcase */}
+                    <div className="flex-1 relative overflow-hidden">
+                      <ServiceShowcase />
                     </div>
                   </div>
                   
@@ -507,7 +480,7 @@ export default function Home() {
                 </div>
                 
                 {/* Power Indicator */}
-                <div className="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50 animate-pulse"></div>
+                <div className="absolute bottom-2 right-2 w-2 h-2 rounded-full bg-green-500/80 shadow-sm shadow-green-500/50"></div>
               </div>
             </div>
           </div>

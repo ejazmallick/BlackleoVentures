@@ -86,16 +86,16 @@ export default function About() {
       <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-leadership-headline">
-              Our Leadership Team
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Meet the founders driving Black Leo Ventures forward
+            <p className="text-xl text-muted-foreground">
+              A passionate team, dedicated to your success.
             </p>
+            <h2 className="text-4xl md:text-5xl font-bold" data-testid="text-leadership-headline">
+              MEET OUR TEAM
+            </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Director 1 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Founder and Advisor */}
             <Card className="hover-elevate" data-testid="card-director-1">
               <CardHeader className="text-center space-y-6">
                 <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
@@ -104,31 +104,13 @@ export default function About() {
                 <div className="space-y-2">
                   <CardTitle className="text-2xl">Nirdosh Arora</CardTitle>
                   <CardDescription className="text-base font-medium text-primary">
-                    Director & Co-Founder
+                    Founder and Advisor
                   </CardDescription>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-center gap-2 pt-4">
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="flex-1"
-                    data-testid="button-email-nirdosh"
-                  >
-                    <a href="mailto:nirdosh@blackleoventures.com">
-                      <Mail className="mr-2 h-4 w-4" />
-                      Email
-                    </a>
-                  </Button>
-                </div>
-                <div className="text-center text-sm text-muted-foreground">
-                  nirdosh@blackleoventures.com
-                </div>
-              </CardContent>
             </Card>
 
-            {/* Director 2 */}
+            {/* Founder and CEO */}
             <Card className="hover-elevate" data-testid="card-director-2">
               <CardHeader className="text-center space-y-6">
                 <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
@@ -137,28 +119,55 @@ export default function About() {
                 <div className="space-y-2">
                   <CardTitle className="text-2xl">Utkarsh Chourasiya</CardTitle>
                   <CardDescription className="text-base font-medium text-primary">
-                    Director & Co-Founder
+                    Founder and CEO
                   </CardDescription>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center justify-center gap-2 pt-4">
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="flex-1"
-                    data-testid="button-email-utkarsh"
-                  >
-                    <a href="mailto:Utkarsh@blackleoventures.com">
-                      <Mail className="mr-2 h-4 w-4" />
-                      Email
-                    </a>
-                  </Button>
+            </Card>
+
+            {/* Investment and Valuation Director */}
+            <Card className="hover-elevate" data-testid="card-director-3">
+              <CardHeader className="text-center space-y-6">
+                <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-primary">AN</span>
                 </div>
-                <div className="text-center text-sm text-muted-foreground">
-                  Utkarsh@blackleoventures.com
+                <div className="space-y-2">
+                  <CardTitle className="text-2xl">Abhishek Negi</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary">
+                    Investment and Valuation Director
+                  </CardDescription>
                 </div>
-              </CardContent>
+              </CardHeader>
+            </Card>
+
+            {/* Marketing Strategist */}
+            <Card className="hover-elevate" data-testid="card-director-4">
+              <CardHeader className="text-center space-y-6">
+                <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-primary">CF</span>
+                </div>
+                <div className="space-y-2">
+                  <CardTitle className="text-2xl">Prof. Christian Farioli</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary">
+                    Marketing Strategist
+                  </CardDescription>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* Director - Financing */}
+            <Card className="hover-elevate" data-testid="card-director-5">
+              <CardHeader className="text-center space-y-6">
+                <div className="mx-auto w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-primary">SP</span>
+                </div>
+                <div className="space-y-2">
+                  <CardTitle className="text-2xl">Subramaniam Parameswaran</CardTitle>
+                  <CardDescription className="text-base font-medium text-primary">
+                    Director - Financing
+                  </CardDescription>
+                </div>
+              </CardHeader>
             </Card>
 
           </div>
@@ -258,6 +267,10 @@ export default function About() {
             <div className="flex items-center justify-center gap-6 text-sm">
               <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</a>
               <a href="/theme" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-theme">Theme</a>
+              <a href="https://www.linkedin.com/company/black-leo-ventures" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1" data-testid="link-footer-linkedin">
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
             </div>
             <p className="text-sm text-muted-foreground" data-testid="text-copyright">
               © 2025 Black Leo Ventures. All rights reserved.

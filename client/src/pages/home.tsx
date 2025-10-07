@@ -49,6 +49,7 @@ import {
   MessageCircle,
   Download,
   Info,
+  Linkedin,
 } from "lucide-react";
 import logoUrl from "@assets/logo blackleo_1759773901852.png";
 import { useEffect, useState, useRef } from "react";
@@ -291,6 +292,15 @@ export default function Home() {
                 Case Studies
               </button>
               <a
+                href="https://getgrants.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                data-testid="link-grants"
+              >
+                Grants
+              </a>
+              <a
                 href="/about"
                 className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 data-testid="link-about"
@@ -356,6 +366,15 @@ export default function Home() {
                   >
                     Case Studies
                   </button>
+                  <a
+                    href="https://getgrants.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
+                    data-testid="link-mobile-grants"
+                  >
+                    Grants
+                  </a>
                   <a
                     href="/about"
                     className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors text-left"
@@ -1362,6 +1381,12 @@ export default function Home() {
                     <div className="font-medium text-foreground">CIN</div>
                     <span className="text-xs">U85300MP2020PTC053751</span>
                   </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Linkedin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <a href="https://www.linkedin.com/company/black-leo-ventures" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-primary transition-colors" data-testid="link-footer-linkedin">
+                    LinkedIn
+                  </a>
                 </li>
               </ul>
             </div>

@@ -3,7 +3,7 @@ import { PitchPracticeAI } from "@/components/pitch-practice-ai";
 import { EquityDilutionCalculator } from "@/components/equity-dilution-calculator";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft, Sparkles, Linkedin } from "lucide-react";
 import logoUrl from "@assets/logo blackleo_1759773901852.png";
 import { useLocation } from "wouter";
 import { useEffect } from "react";
@@ -100,6 +100,10 @@ export default function Tools() {
             <div className="flex items-center gap-6 text-sm">
               <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</a>
               <a href="/theme" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-theme">Theme</a>
+              <a href="https://www.linkedin.com/company/black-leo-ventures" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1" data-testid="link-footer-linkedin">
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
             </div>
             <p className="text-sm text-muted-foreground">
               © 2025 Black Leo Ventures. All rights reserved.

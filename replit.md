@@ -118,6 +118,23 @@ vercel --prod
 - Fast loading and optimized performance
 
 ## Recent Changes
+- 2025-10-07: Navigation & Team Structure Updates
+  - **LinkedIn Integration**: Added LinkedIn company link to footer on all pages (home, about, tools)
+    - Link: https://www.linkedin.com/company/black-leo-ventures
+    - Accessible from footer navigation across the website
+  - **Grants Menu Addition**: Added "Grants" menu item to main navigation
+    - Positioned after "Case Studies" in both desktop and mobile navigation
+    - Links to external grants portal: https://getgrants.in/
+  - **Team Structure Update on About Page**:
+    - New headline: "A passionate team, dedicated to your success."
+    - Section title changed to "MEET OUR TEAM"
+    - Expanded to 5 team members in 3-column grid layout:
+      * Nirdosh Arora - Founder and Advisor
+      * Utkarsh Chourasiya - Founder and CEO
+      * Abhishek Negi - Investment and Valuation Director
+      * Prof. Christian Farioli - Marketing Strategist
+      * Subramaniam Parameswaran - Director - Financing
+  - **All changes verified and tested**: Navigation links functional, team grid responsive
 - 2025-10-07: Cinematic Hero Display Enhancement & Theme Page Migration
   - **Logo Enhancement**: Increased logo size to h-16 (little big) across ALL pages and footers for premium brand presence
   - **Theme Page Migration**: 
@@ -125,13 +142,10 @@ vercel --prod
     - Created dedicated Theme page (/theme) with complete color customization controls
     - Added Theme page links to footer on all pages (home, about, tools)
   - **Cinematic TV Display Redesign**: Transformed "Your Growth Partner" hero box into professional broadcast display
-    - AnimatedBoardText as dominant focal point at text-xl/2xl size with rotating service messages
-    - Live broadcast indicator with pulsing red dot for dynamic feel
-    - Service badges (01-04) for Funding, Pitch, Grants, M&A
-    - Animated audio visualization bars in status bar
-    - Scanline effects and screen glare for cinematic film aesthetic
-    - Professional TV/monitor frame with bezel and power indicator
-    - Messages rotate every 3 seconds showcasing key service offerings
+    - ServiceShowcase component with rotating service messages
+    - Clean professional design without gimmicky indicators
+    - Smooth transitions showcasing key service offerings every 5 seconds
+    - Responsive design that stays within TV box boundaries
   - **Architect Approved**: All changes reviewed and approved for production readiness
 - 2025-10-06: UI Accessibility and Visibility Improvements
   - **Case Studies Section**: Fixed "Key Success Factor" text visibility in dark mode

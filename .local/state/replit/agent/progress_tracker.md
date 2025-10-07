@@ -39,3 +39,6 @@
 [x] 39. Fix "Key Success Factor" text visibility with highlighted background containers
 [x] 40. Architect review and approval of all UI improvements
 [x] 41. Final testing and verification across different themes
+[x] 42. Increase logo size from h-10 to h-12 across all pages
+[x] 43. Increase logo size from h-12 to h-14 and adjust nav padding from py-4 to py-5
+[x] 44. Architect review and approval of enlarged logo with proper spacing

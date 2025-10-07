@@ -28,10 +28,10 @@ export default function Tools() {
       <ColorThemeSwitcher />
 
       <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
             <a href="/" className="flex items-center gap-2" data-testid="link-tools-logo">
-              <img src={logoUrl} alt="Black Leo Ventures" className="h-10 w-auto" data-testid="img-tools-logo" />
+              <img src={logoUrl} alt="Black Leo Ventures" className="h-14 w-auto" data-testid="img-tools-logo" />
             </a>
             <div className="flex items-center gap-3">
               <Button

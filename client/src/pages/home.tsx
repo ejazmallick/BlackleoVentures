@@ -52,7 +52,6 @@ import {
 } from "lucide-react";
 import logoUrl from "@assets/logo blackleo_1759773901852.png";
 import { useEffect, useState, useRef } from "react";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
@@ -77,7 +76,7 @@ function AnimatedBoardText() {
   }, [messages.length]);
 
   return (
-    <div className="relative w-full px-4">
+    <div className="relative w-full">
       {messages.map((message, index) => (
         <div
           key={index}
@@ -88,7 +87,7 @@ function AnimatedBoardText() {
           }`}
           data-testid={`text-animated-message-${index}`}
         >
-          <p className="text-base md:text-lg leading-relaxed">{message}</p>
+          <p className="leading-relaxed">{message}</p>
         </div>
       ))}
     </div>
@@ -269,7 +268,6 @@ export default function Home() {
                 <Download className="w-3 h-3" />
                 Company Profile
               </a>
-              <ThemeToggle />
               <Button
                 size="sm"
                 onClick={() => scrollToSection("contact")}
@@ -336,10 +334,6 @@ export default function Home() {
                     <Download className="w-4 h-4" />
                     Company Profile
                   </a>
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t">
-                    <span className="text-sm font-medium">Theme</span>
-                    <ThemeToggle />
-                  </div>
                   <Button
                     className="w-full mt-4"
                     onClick={() => scrollToSection("contact")}
@@ -415,15 +409,94 @@ export default function Home() {
             </div>
 
             <div className="relative lg:block hidden">
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/30 flex flex-col items-center justify-center p-8 animate-float shadow-xl" data-testid="card-growth-partner">
-                <div className="text-center space-y-6 w-full">
-                  <div className="text-4xl font-bold text-primary border-b-2 border-primary/30 pb-4" data-testid="text-board-title">
-                    Your Growth Partner
+              {/* TV/Display Frame */}
+              <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-800 dark:from-zinc-950 dark:to-zinc-900 p-6 shadow-2xl border-8 border-zinc-800 dark:border-zinc-950" data-testid="card-growth-partner">
+                {/* Screen Bezel */}
+                <div className="absolute inset-4 rounded-lg border-2 border-zinc-700 dark:border-zinc-800"></div>
+                
+                {/* Screen Content */}
+                <div className="relative h-full rounded-lg bg-gradient-to-br from-black to-zinc-900 overflow-hidden border border-zinc-700">
+                  {/* Scanline Effect */}
+                  <div className="absolute inset-0 pointer-events-none z-10 opacity-10">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent animate-pulse-slow"></div>
+                    <div className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(255,255,255,0.03)_2px,rgba(255,255,255,0.03)_4px)]"></div>
                   </div>
-                  <div className="space-y-3 text-base text-foreground font-medium overflow-hidden min-h-[200px]">
-                    <AnimatedBoardText />
+                  
+                  {/* Content Display */}
+                  <div className="relative h-full p-6 flex flex-col z-20">
+                    {/* Header */}
+                    <div className="text-center space-y-2 pb-4 border-b border-primary/30">
+                      <div className="text-2xl font-bold text-primary tracking-wide" data-testid="text-board-title">
+                        YOUR GROWTH PARTNER
+                      </div>
+                      <div className="flex items-center justify-center gap-2 text-xs text-primary/60 font-mono uppercase tracking-wider">
+                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                        Live Broadcast
+                      </div>
+                    </div>
+                    
+                    {/* Main Content - Animated Messages */}
+                    <div className="flex-1 flex items-center justify-center py-8">
+                      <div className="text-center space-y-6 max-w-md">
+                        <div className="text-white text-xl md:text-2xl font-semibold leading-relaxed min-h-[120px] flex items-center justify-center">
+                          <AnimatedBoardText />
+                        </div>
+                        
+                        {/* Service Indicators */}
+                        <div className="grid grid-cols-4 gap-2 pt-4">
+                          <div className="flex flex-col items-center gap-1">
+                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
+                              <span className="text-primary text-xs font-mono">01</span>
+                            </div>
+                            <span className="text-[10px] text-zinc-500">Funding</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1">
+                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
+                              <span className="text-primary text-xs font-mono">02</span>
+                            </div>
+                            <span className="text-[10px] text-zinc-500">Pitch</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1">
+                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
+                              <span className="text-primary text-xs font-mono">03</span>
+                            </div>
+                            <span className="text-[10px] text-zinc-500">Grants</span>
+                          </div>
+                          <div className="flex flex-col items-center gap-1">
+                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
+                              <span className="text-primary text-xs font-mono">04</span>
+                            </div>
+                            <span className="text-[10px] text-zinc-500">M&A</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Bottom Status Bar */}
+                    <div className="flex items-center justify-between pt-3 border-t border-primary/30">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <span className="text-xs text-zinc-400 font-mono">BROADCASTING</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-zinc-500 font-mono">
+                        <div className="flex gap-1">
+                          <div className="w-1 h-3 bg-primary/40 animate-pulse"></div>
+                          <div className="w-1 h-4 bg-primary/60 animate-pulse" style={{animationDelay: "0.1s"}}></div>
+                          <div className="w-1 h-3 bg-primary/40 animate-pulse" style={{animationDelay: "0.2s"}}></div>
+                          <div className="w-1 h-5 bg-primary/80 animate-pulse" style={{animationDelay: "0.3s"}}></div>
+                          <div className="w-1 h-3 bg-primary/40 animate-pulse" style={{animationDelay: "0.4s"}}></div>
+                        </div>
+                        <span>AUDIO</span>
+                      </div>
+                    </div>
                   </div>
+                  
+                  {/* Screen Glare Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
                 </div>
+                
+                {/* Power Indicator */}
+                <div className="absolute bottom-2 right-2 w-3 h-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50 animate-pulse"></div>
               </div>
             </div>
           </div>

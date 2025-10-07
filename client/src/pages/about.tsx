@@ -254,7 +254,11 @@ export default function About() {
       <footer className="py-8 bg-card border-t">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center space-y-4">
-            <img src={logoUrl} alt="Black Leo Ventures" className="h-10 w-auto mx-auto" data-testid="img-footer-logo" />
+            <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto mx-auto" data-testid="img-footer-logo" />
+            <div className="flex items-center justify-center gap-6 text-sm">
+              <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</a>
+              <a href="/theme" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-theme">Theme</a>
+            </div>
             <p className="text-sm text-muted-foreground" data-testid="text-copyright">
               © 2025 Black Leo Ventures. All rights reserved.
             </p>

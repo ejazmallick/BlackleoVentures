@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { PitchPracticeAI } from "@/components/pitch-practice-ai";
 import { EquityDilutionCalculator } from "@/components/equity-dilution-calculator";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import logoUrl from "@assets/logo blackleo_1759773901852.png";
@@ -31,17 +30,14 @@ export default function Tools() {
             <a href="/" className="flex items-center gap-2" data-testid="link-tools-logo">
               <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto" data-testid="img-tools-logo" />
             </a>
-            <div className="flex items-center gap-3">
-              <Button
-                variant="ghost"
-                onClick={() => setLocation("/")}
-                data-testid="button-back-home"
-              >
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </Button>
-              <ThemeToggle />
-            </div>
+            <Button
+              variant="ghost"
+              onClick={() => setLocation("/")}
+              data-testid="button-back-home"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Button>
           </div>
         </div>
       </nav>
@@ -96,10 +92,14 @@ export default function Tools() {
 
       <footer className="py-12 bg-card border-t">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">
-              <img src={logoUrl} alt="Black Leo Ventures" className="h-8 w-auto" />
+              <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto" />
               <span className="text-sm text-muted-foreground">Your startup growth partner</span>
+            </div>
+            <div className="flex items-center gap-6 text-sm">
+              <a href="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</a>
+              <a href="/theme" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-theme">Theme</a>
             </div>
             <p className="text-sm text-muted-foreground">
               © 2025 Black Leo Ventures. All rights reserved.

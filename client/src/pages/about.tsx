@@ -10,10 +10,10 @@ export default function About() {
       <ColorThemeSwitcher />
       {/* Navigation */}
       <div className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
             <a href="/" className="flex items-center gap-2" data-testid="link-home-logo">
-              <img src={logoUrl} alt="Black Leo Ventures" className="h-14 w-auto" data-testid="img-logo" />
+              <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto" data-testid="img-logo" />
             </a>
             <div className="flex items-center gap-4">
               <Button

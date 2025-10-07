@@ -1334,7 +1334,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
-              <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto" data-testid="img-footer-logo" />
+              <img src={logoUrl} alt="Black Leo Ventures" className="h-20 w-auto" data-testid="img-footer-logo" />
               <p className="text-sm text-muted-foreground">
                 Your startup growth partner - From idea to scale
               </p>

@@ -94,7 +94,7 @@ export default function Tools() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">
-              <img src={logoUrl} alt="Black Leo Ventures" className="h-16 w-auto" />
+              <img src={logoUrl} alt="Black Leo Ventures" className="h-20 w-auto" />
               <span className="text-sm text-muted-foreground">Your startup growth partner</span>
             </div>
             <div className="flex items-center gap-6 text-sm">

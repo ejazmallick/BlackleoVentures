@@ -57,37 +57,80 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { MotivationalFacts } from "@/components/motivational-facts";
 
-function AnimatedBoardText() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const messages = [
-    "From idea validation to successful funding rounds",
-    "Expert pitch deck development & refinement",
-    "Strategic investor matchmaking & connections",
-    "Comprehensive financial modeling support",
-    "End-to-end fundraising guidance",
+function MissionControlDisplay() {
+  const [currentScene, setCurrentScene] = useState(0);
+  
+  const scenes = [
+    {
+      type: "metrics",
+      headline: "₹250Cr+ Capital Deployed",
+      metric: "47",
+      metricLabel: "Startups Funded in 2024",
+      caption: "Average funding round: ₹5.3Cr"
+    },
+    {
+      type: "spotlight",
+      headline: "Recent Success",
+      metric: "2.8x",
+      metricLabel: "Avg. Valuation Growth",
+      caption: "EduTech startup secured Series A in 45 days"
+    },
+    {
+      type: "activity",
+      headline: "Live Pipeline",
+      metric: "23",
+      metricLabel: "Active Investor Meetings",
+      caption: "FinTech & HealthTech seeing high interest"
+    }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % messages.length);
-    }, 3000);
+      setCurrentScene((prev) => (prev + 1) % scenes.length);
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [messages.length]);
+  }, [scenes.length]);
 
   return (
-    <div className="relative w-full">
-      {messages.map((message, index) => (
+    <div className="relative w-full h-full">
+      {scenes.map((scene, index) => (
         <div
           key={index}
-          className={`absolute inset-x-0 transition-all duration-700 ${
-            index === currentIndex
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4 pointer-events-none"
+          className={`absolute inset-0 transition-all duration-1000 ${
+            index === currentScene
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-95 pointer-events-none"
           }`}
-          data-testid={`text-animated-message-${index}`}
+          data-testid={`scene-${scene.type}`}
         >
-          <p className="leading-relaxed">{message}</p>
+          <div className="flex flex-col items-center justify-center h-full space-y-4">
+            <div className="text-primary text-sm font-mono uppercase tracking-wider">
+              {scene.type === "metrics" && "📊 METRICS PULSE"}
+              {scene.type === "spotlight" && "⭐ FOUNDER SPOTLIGHT"}
+              {scene.type === "activity" && "🔥 INVESTOR RADAR"}
+            </div>
+            
+            <h3 className="text-white text-2xl md:text-3xl font-bold text-center">
+              {scene.headline}
+            </h3>
+            
+            <div className="flex items-baseline gap-3">
+              <AnimatedCounter 
+                end={parseInt(scene.metric.replace(/[^0-9]/g, ''))} 
+                className="text-5xl md:text-6xl font-bold text-primary"
+              />
+              <span className="text-xl text-primary">{scene.metric.replace(/[0-9]/g, '')}</span>
+            </div>
+            
+            <p className="text-zinc-400 text-sm font-medium">
+              {scene.metricLabel}
+            </p>
+            
+            <p className="text-zinc-500 text-xs italic border-t border-zinc-700 pt-3 mt-2">
+              {scene.caption}
+            </p>
+          </div>
         </div>
       ))}
     </div>
@@ -435,41 +478,9 @@ export default function Home() {
                       </div>
                     </div>
                     
-                    {/* Main Content - Animated Messages */}
-                    <div className="flex-1 flex items-center justify-center py-8">
-                      <div className="text-center space-y-6 max-w-md">
-                        <div className="text-white text-xl md:text-2xl font-semibold leading-relaxed min-h-[120px] flex items-center justify-center">
-                          <AnimatedBoardText />
-                        </div>
-                        
-                        {/* Service Indicators */}
-                        <div className="grid grid-cols-4 gap-2 pt-4">
-                          <div className="flex flex-col items-center gap-1">
-                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
-                              <span className="text-primary text-xs font-mono">01</span>
-                            </div>
-                            <span className="text-[10px] text-zinc-500">Funding</span>
-                          </div>
-                          <div className="flex flex-col items-center gap-1">
-                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
-                              <span className="text-primary text-xs font-mono">02</span>
-                            </div>
-                            <span className="text-[10px] text-zinc-500">Pitch</span>
-                          </div>
-                          <div className="flex flex-col items-center gap-1">
-                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
-                              <span className="text-primary text-xs font-mono">03</span>
-                            </div>
-                            <span className="text-[10px] text-zinc-500">Grants</span>
-                          </div>
-                          <div className="flex flex-col items-center gap-1">
-                            <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center">
-                              <span className="text-primary text-xs font-mono">04</span>
-                            </div>
-                            <span className="text-[10px] text-zinc-500">M&A</span>
-                          </div>
-                        </div>
-                      </div>
+                    {/* Main Content - Mission Control Display */}
+                    <div className="flex-1 relative">
+                      <MissionControlDisplay />
                     </div>
                     
                     {/* Bottom Status Bar */}

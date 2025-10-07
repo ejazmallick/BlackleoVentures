@@ -11,24 +11,31 @@ A premium, SEO-optimized corporate website for Black Leo Ventures - a startup fu
 - **Deployment**: Vercel-ready with optimized configuration
 
 ## Features
-1. **Hero Section** - Compelling headline with dual CTAs, animated "Your Growth Partner" board with rotating messages
-2. **Pain Points Section** - Addresses common fundraising challenges with interactive cards
-3. **Value Proposition** - 5-point advantage including Pitch Deck Analysis & Improvement
-4. **Transparent Pricing** - Detailed fee structure with consulting and success fees clearly displayed
-5. **Case Studies** - Real founder testimonials with animated metrics counters
-6. **Process Flow** - 4-step funding system with timeline disclaimer
-7. **FAQ Section** - Comprehensive Q&A addressing transparency, security, and process
-8. **Final CTA** - Conversion-focused call-to-action
-9. **Professional Footer** - Complete navigation and trust badges with clickable logo
-10. **Floating WhatsApp** - Persistent WhatsApp contact button for instant communication
-11. **Color Theme Switcher** - Hidden by default with discoverable eye button and intro animation
+1. **Hero Section** - Compelling headline with dual CTAs, cinematic TV/display showcasing "Your Growth Partner" with live broadcast animation
+2. **Cinematic TV Display** - Professional TV/monitor frame with:
+   - Large rotating service messages as main focal point (text-xl/2xl)
+   - Live broadcast indicator with pulsing red dot
+   - Service badges (01-04) for Funding, Pitch, Grants, M&A
+   - Animated audio visualization bars
+   - Scanline effects and screen glare for film-like aesthetic
+3. **Pain Points Section** - Addresses common fundraising challenges with interactive cards
+4. **Value Proposition** - 5-point advantage including Pitch Deck Analysis & Improvement
+5. **Transparent Pricing** - Detailed fee structure with consulting and success fees clearly displayed
+6. **Case Studies** - Real founder testimonials with animated metrics counters
+7. **Process Flow** - 4-step funding system with timeline disclaimer
+8. **FAQ Section** - Comprehensive Q&A addressing transparency, security, and process
+9. **Final CTA** - Conversion-focused call-to-action
+10. **Professional Footer** - Complete navigation and trust badges with clickable logo (h-16)
+11. **Floating WhatsApp** - Persistent WhatsApp contact button for instant communication
+12. **Theme Page** - Dedicated page (/theme) for color customization, accessible via footer links
 
 ## Design System
 - **Brand Colors**: Yellow-based theme with multiple color schemes
   - Primary (Yellow): #FFD700 / HSL 51, 100%, 50%
   - Alternative themes: Violet (#8A2BE2), Red (#FF4500)
   - Accents: Black (#000000), White (#FFFFFF)
-- **Color Theme Switcher**: Discoverable eye button on left edge with 5-second intro animation
+- **Logo**: h-16 (little big) consistently across all pages and footers for premium brand presence
+- **Color Theme Switcher**: Available on dedicated Theme page (/theme) accessible via footer links on all pages
 - **Typography**: Inter for body text, Space Grotesk for accents
 - **Dark Mode**: Fully supported with persistent theme toggle and localStorage sync
 - **Responsive**: Mobile-first design, optimized for all screen sizes
@@ -37,7 +44,8 @@ A premium, SEO-optimized corporate website for Black Leo Ventures - a startup fu
   - Animated counters for metrics
   - Interactive card hover effects with scale and shadow
   - Gradient animations on hero section
-  - Rotating text animation in "Your Growth Partner" board
+  - Cinematic TV/display with rotating service messages (3-second intervals)
+  - Live broadcast indicators and audio visualization effects
   - Pulse, shimmer, and float effects
   - Accessibility: Respects prefers-reduced-motion settings
 
@@ -53,12 +61,15 @@ A premium, SEO-optimized corporate website for Black Leo Ventures - a startup fu
 client/
 ├── src/
 │   ├── pages/
-│   │   ├── home.tsx          # Main landing page with all sections
+│   │   ├── home.tsx          # Main landing page with cinematic TV display
+│   │   ├── about.tsx         # About page with team information
+│   │   ├── tools.tsx         # AI tools page (Pitch Practice & Equity Calculator)
+│   │   ├── theme.tsx         # Dedicated theme customization page
 │   │   └── not-found.tsx     # 404 page
 │   ├── components/
 │   │   ├── ui/               # shadcn components
 │   │   ├── theme-provider.tsx    # Dark/light mode provider
-│   │   ├── theme-toggle.tsx      # Theme switcher component
+│   │   ├── color-theme-switcher.tsx  # Color theme switcher (used on theme page)
 │   │   ├── animated-counter.tsx  # Animated number counter
 │   │   ├── scroll-reveal.tsx     # Scroll-based reveal animations
 │   │   └── floating-whatsapp.tsx # Floating WhatsApp CTA button
@@ -66,7 +77,7 @@ client/
 │   └── index.css             # Global styles + design tokens + animations
 ├── index.html                # HTML with SEO meta tags
 attached_assets/
-└── backleo_1759611500843.PNG # Company logo
+└── logo blackleo_1759773901852.png # Company logo
 ```
 
 ## Development
@@ -107,6 +118,21 @@ vercel --prod
 - Fast loading and optimized performance
 
 ## Recent Changes
+- 2025-10-07: Cinematic Hero Display Enhancement & Theme Page Migration
+  - **Logo Enhancement**: Increased logo size to h-16 (little big) across ALL pages and footers for premium brand presence
+  - **Theme Page Migration**: 
+    - Removed ColorThemeSwitcher component from home, about, and tools pages for cleaner UI
+    - Created dedicated Theme page (/theme) with complete color customization controls
+    - Added Theme page links to footer on all pages (home, about, tools)
+  - **Cinematic TV Display Redesign**: Transformed "Your Growth Partner" hero box into professional broadcast display
+    - AnimatedBoardText as dominant focal point at text-xl/2xl size with rotating service messages
+    - Live broadcast indicator with pulsing red dot for dynamic feel
+    - Service badges (01-04) for Funding, Pitch, Grants, M&A
+    - Animated audio visualization bars in status bar
+    - Scanline effects and screen glare for cinematic film aesthetic
+    - Professional TV/monitor frame with bezel and power indicator
+    - Messages rotate every 3 seconds showcasing key service offerings
+  - **Architect Approved**: All changes reviewed and approved for production readiness
 - 2025-10-06: UI Accessibility and Visibility Improvements
   - **Case Studies Section**: Fixed "Key Success Factor" text visibility in dark mode
     - Changed text color to use `text-foreground dark:text-white` for maximum visibility
